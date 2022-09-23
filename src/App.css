@@ -1,6 +1,7 @@
 
 *{margin: 0 auto;}
 ul, li{list-style:none;}
+main{height: calc(100vh - 70px);}
 
 /* font */
 @font-face {
