@@ -1,8 +1,10 @@
 import React from 'react';
-import './header.css';
-import './App.css';
-import logo from './image/today_logo.png';
-import login from './image/login.png';
+import '../header.css';
+import '../App.css';
+import logo from '../image/today_logo.png';
+import login from '../image/login.png';
+import { Link,Outlet } from 'react-router-dom';
+
 
 const Header = () => {
 	return (
@@ -16,9 +18,12 @@ const Header = () => {
                     <li><a>Calender</a></li>
                 </ul>
                 <div className='login'>
-                    <img className='login' src={login} alt='login'/>
+                    <Link to="/join">
+                        <img className='login' src={login} alt='login'/>
+                    </Link>
                 </div>
             </div>
+            <main><Outlet /></main>
 		</div>
 	);
 };
