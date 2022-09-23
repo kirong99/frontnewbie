@@ -1,17 +1,31 @@
 import React from 'react';
-import Join from './Login/Join';
-import Header from './Header';
-import "./App.css";
-
+import Header from './header.js';
+import './App.css';
+import './main.css';
 
 function App() {
-    let name = "최기룡"
-    return(
-        <>
-            <Header />
-            <Join />
-        </>
-    )
-}
+  return(
+    <div>
+      <Header/>
+      <div className='content'>
+        <div className='left'>
+          <div className='sp'>
+            <div><div className='line'></div><div className='circle'></div></div>
+            <div><div className='line'></div><div className='circle'></div></div>
+            <div><div className='line'></div><div className='circle'></div></div>
+            <div><div className='line'></div><div className='circle'></div></div>
+            <div><div className='line'></div><div className='circle'></div></div>
+            <div><div className='line'></div><div className='circle'></div></div>
+          </div>
+          
+        </div>
+        <div className='right'>
+          <div className='sticker'></div>
+        
+          
+        </div>
+      </div>
+    </div>
+)}
 
 export default App;

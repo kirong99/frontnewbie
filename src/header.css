@@ -1,0 +1,12 @@
+.header{width: 100%; height: 70px; background-color: rgb(255 255 0 / 34%);}
+.header-width{max-width: 1920px; margin: 0 auto;}
+.header .logo {width: 60px; height: 60px; margin-top: 5px; float: left; margin-left: 50px;}
+.header .logo_img{width: 100%; height: 100%;}
+.header .menu{margin-left: 30px; float: left; margin-top: 25px;}
+.header .menu li{float: left; text-align: center;}
+.header .menu li:nth-child(1){width: 70px;}
+.header .menu li:nth-child(2){margin-left: 25px; width: 110px;}
+.header .menu li:hover{border-bottom: 5px solid #ffaeae;}
+.header .menu a{font-size: 17px; font-family: Leferi;}
+.header .login{float:right; margin: 20px 50px 0 0; width: 30px; height: 30px;}
+.header .login img{width: 100%; height: 100%; margin: 0;}
