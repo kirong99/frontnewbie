@@ -1,31 +1,30 @@
-import React from 'react';
-import Header from './header.js';
+
+import Header from './Main/header.js';
+import Todo from './Main/Todo.js';
+import Join from './Login/Join.js';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import './main.css';
 
+
+
 function App() {
   return(
-    <div>
-      <Header/>
-      <div className='content'>
-        <div className='left'>
-          <div className='sp'>
-            <div><div className='line'></div><div className='circle'></div></div>
-            <div><div className='line'></div><div className='circle'></div></div>
-            <div><div className='line'></div><div className='circle'></div></div>
-            <div><div className='line'></div><div className='circle'></div></div>
-            <div><div className='line'></div><div className='circle'></div></div>
-            <div><div className='line'></div><div className='circle'></div></div>
-          </div>
-          
-        </div>
-        <div className='right'>
-          <div className='sticker'></div>
-        
-          
-        </div>
-      </div>
-    </div>
+    <Routes>
+      <Route element={<Header />}>
+        <Route index element={<Todo />}/>
+        <Route path = "/join" element={<Join />}/>
+      </Route>
+    </Routes>
 )}
+
+// function App(){
+//   return(
+//     <div>
+//       <Header />
+//       <Todo />
+//     </div>
+//   )
+// }
 
 export default App;
