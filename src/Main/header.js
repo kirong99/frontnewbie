@@ -17,9 +17,9 @@ const Header = () => {
                         <li className='on'><a>Home</a></li>
                         <li><a>Calender</a></li>
                     </ul>
-                    <div className='login'>
+                    <div className='login_ico'>
                         <Link to="/login">
-                            <img className='login' src={login} alt='login'/>
+                            <img src={login} alt='login'/>
                         </Link>
                     </div>
                 </div>
