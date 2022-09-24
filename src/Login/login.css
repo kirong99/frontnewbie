@@ -1,0 +1,15 @@
+.login{width: 620px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+.login h2{font-size: 30px; text-align: center; margin-bottom: 54px;}
+.login h2:nth-child(5){margin-top: 44px;}
+.login_form{margin-top: 54px; width: 454px; height: 104px;}
+.login_form li{width: 100%; height: 41px;}
+.login_form li p{font-size: 25px; font-family: 'Leferi'; float: left; margin-top: 9px;}
+.login_form input{float: right; width: 390px; height: 35px; border-radius: 10px; font-size: 20px;}
+.login_form li:nth-child(2){margin-top: 30px;}
+.login_menu{width: 363px; height: 20px;  margin: 30px auto 60px;}
+.login_menu li{float: left; margin-right: 30px; font-size: 15px;}
+.login_menu li:nth-child(3){margin-right: 0;}
+.line{width: 100%; border-top: 1px solid #707070;}
+.easy_login{width: 454px; height: 45px; border-radius: 5px; text-align: center; line-height: 45px; font-size: 15px; font-weight: bold;}
+.kakao{background: #F7E600; color: #3A1D1D; margin-top: 54px; }
+.naver{background-color: #00C73C; color: #fff; margin-top: 15px; }
