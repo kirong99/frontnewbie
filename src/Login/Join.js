@@ -1,28 +1,12 @@
 import React from "react";
 import { useForm } from 'react-hook-form';
-import { yupResolver } from "@hookform/resolvers/yup"
-import * as yup from "yup";
-
-const regexEmail = /^[A-Za-z0-9]([-_.]?[A-Za-z0-9])*@[A-Za-z0-9]([-_.]?[A-Za-z0-9])*\.[A-Za-z]{2,3}$/;
-const errMessage = {
-    errEmail : "이메일 형식에 맞지 않습니다."
-}
-const schema = yup.object({
-    name: yup.string()
-        .required('이름은 필수 입력입니다.'),
-    email: yup.string()
-        .required('이메일은 필수 입력입니다.')
-        .matches(regexEmail,errMessage.errEmail)
-})
 
 function Join(){
 	const {
 		register,
 		handleSubmit,
 		formState: { errors },
-	} = useForm({
-        resolver : yupResolver(schema),
-    });
+	} = useForm();
     const onSubmit = data => console.log(data);
     
     return (
