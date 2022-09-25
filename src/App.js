@@ -15,6 +15,7 @@ function App() {
       <Route element={<Header />}>
         <Route index element={<Todo />}/>
         <Route path = "/Login" element={<Login />}/>
+        <Route path = "/Join" element={<Join />}/>
       </Route>
     </Routes>
 )}
