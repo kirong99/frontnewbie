@@ -31,7 +31,7 @@
 
 ##  [ 2022년 09월 14일 ]
 + 로고 완성  
-    ![홈화면1](./img/%ED%88%AC%EB%8D%B0%EC%9D%B4_%EB%A1%9C%EA%B3%A0.png)
+    ![홈화면1](/src/image/today_logo.png)
 
 + Router Dom 사용하여 페이지 이동
 + 팀원과 Git repository 연동
