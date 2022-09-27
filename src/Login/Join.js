@@ -15,7 +15,7 @@ function Join(){
             <form className="join" onSubmit={handleSubmit(onSubmit)}>
                 <h1 className="title">회원가입</h1>
                 <div className="text name">
-                    <label htmlFor="name">이름</label>
+                    <label htmlFor="name">이름<span className="dot"></span></label>
                     <div>
                         <input
                             className="input"
@@ -30,7 +30,7 @@ function Join(){
                 </div>
                 {errors.name && <small role="alert" className="alert">{errors.name.message}</small>}
                 <div className="text email">
-                    <label htmlFor="email">이메일</label>
+                    <label htmlFor="email">이메일<span className="dot"></span></label>
                     <div>
                         <input
                             className="input"
