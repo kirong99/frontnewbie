@@ -14,8 +14,8 @@ const Header = () => {
                         <img className='logo_img' src={logo} alt='logo'/>
                     </div>
                     <ul className='menu'>
-                        <li className='on'><a>Home</a></li>
-                        <li><a>Calender</a></li>
+                        <li className='on'><a><Link to="/Todo" className='link'>Home</Link></a></li>
+                        <li><a><Link to="/Calendar" className='link'>Calender</Link></a></li>
                     </ul>
                     <div className='login_ico'>
                         <Link to="/login">

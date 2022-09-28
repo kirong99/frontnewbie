@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'Noto Sans KR', sans-serif;
+    src: url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap');
+    font-weight: 700;
+    font-weight: 400;
+}
+
+.join{width: 750px; position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%);}
+.title{text-align: center;margin-bottom: 30px;font-family: 'Noto Sans KR'; font-weight: 700;}
+.join div{width:400px;margin-top: 10px;margin-bottom: 30px;}
+.text{font-size: 20px;font-family: 'Noto Sans KR';}
+.input{width: 400px;height: 30px;border: 1px solid #ccc;border-radius: 4px;}
+.join_btn{width: 400px;border: 1px solid #ccc;height: 30px;border-radius: 4px;background-color: rgba(255,255,0,34%);cursor: pointer;}
+.join_btn:hover{background-color: yellow}
+.alert{position: relative;left: 171px;bottom: 30px;color: #d36969;}
+.text .dot{width: 5px;height: 5px;border-radius: 100%;background-color: red;position: absolute;display: inline-block;vertical-align: top;}
