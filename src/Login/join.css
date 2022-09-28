@@ -5,12 +5,16 @@
     font-weight: 400;
 }
 
-.join{width: 750px; position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%);}
+.join{width: 750px; margin-top:30px}
 .title{text-align: center;margin-bottom: 30px;font-family: 'Noto Sans KR'; font-weight: 700;}
 .join div{width:400px;margin-top: 10px;margin-bottom: 30px;}
+.text .id_box{display:flex;width: 530px;}
 .text{font-size: 20px;font-family: 'Noto Sans KR';}
-.input{width: 400px;height: 30px;border: 1px solid #ccc;border-radius: 4px;}
-.join_btn{width: 400px;border: 1px solid #ccc;height: 30px;border-radius: 4px;background-color: rgba(255,255,0,34%);cursor: pointer;}
-.join_btn:hover{background-color: yellow}
-.alert{position: relative;left: 171px;bottom: 30px;color: #d36969;}
-.text .dot{width: 5px;height: 5px;border-radius: 100%;background-color: red;position: absolute;display: inline-block;vertical-align: top;}
+.input{width: 400px;height: 30px;border: 1px solid #ffaeae;border-radius: 4px;padding-left:10px}
+.id_input{margin: 0;}
+.join_btn{width: 400px;border: none; height: 30px;border-radius: 4px;background-color: rgba(255,255,0,34%);cursor: pointer;}
+.join_btn:hover{background-color: #ffaeae;color: #fff;}
+.alert{position: relative;bottom: 30px;color: #ffaeae;left: 184px;}
+.dupli{width: 70px;border: none;background-color: rgba(255,255,0,0.34);border-radius: 4px;font-size: 12px;height: 34px;cursor: pointer;}
+.dupli:hover{background-color: #ffaeae;color: #fff;}
+.text .dot{width: 5px;height: 5px;border-radius: 100%;background-color: #ffaeae;position: absolute;display: inline-block;vertical-align: top;}
