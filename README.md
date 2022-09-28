@@ -42,7 +42,7 @@
 
 ##  [ 2022년 09월 14일 ]
 + 로고 완성  
-    ![홈화면1](./img/%ED%88%AC%EB%8D%B0%EC%9D%B4_%EB%A1%9C%EA%B3%A0.png)
+    ![홈화면1](/src/image/today_logo.png)
 
 + Router Dom 사용하여 페이지 이동
 + 팀원과 Git repository 연동
@@ -67,15 +67,15 @@
         - 필요한 지식 및 기술 : HTML, CSS, React, JavaScript, DB
         - 예상되는 결과물 : Todo, 캘린더, 일정 관리
         - 회로도  
-        ![회로도](./img/%ED%88%AC%EB%8D%B0%EC%9D%B4_%ED%9A%8C%EB%A1%9C%EB%8F%84.png)
+        ![회로도](src/image/today_schematic.png)
 + 예상 결과물
     - 홈화면
-    ![홈화면1](./img/%ED%88%AC%EB%8D%B0%EC%9D%B4_%ED%99%88%ED%99%94%EB%A9%B4.png)
-    ![홈화면2](./img/%ED%88%AC%EB%8D%B0%EC%9D%B4_%ED%99%88%ED%99%94%EB%A9%B42.png)
+    ![홈화면1](src/image/today_main.png)
+    ![홈화면2](src/image/today_colorEdit.png)
     - 캘린더
-    ![캘린더](./img/%ED%88%AC%EB%8D%B0%EC%9D%B4_%EC%BA%98%EB%A6%B0%EB%8D%94.png)
+    ![캘린더](src/image/today_calendar.png)
     - 로그인
-    ![로그인](./img/%ED%88%AC%EB%8D%B0%EC%9D%B4_%EB%A1%9C%EA%B7%B8%EC%9D%B8.png)
+    ![로그인](src/image/today_login.png)
 
 + 기능
     + 홈화면<br>
