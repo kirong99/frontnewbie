@@ -1,5 +1,4 @@
-import { getValue } from "@testing-library/user-event/dist/utils";
-import React from "react";
+import React, { useRef } from "react";
 import { useForm } from 'react-hook-form';
 import './join.css';
 
@@ -7,12 +6,12 @@ function Join(){
 	const {
 		register,
 		handleSubmit,
+        watch,
 		formState: { errors },
 	} = useForm();
     const onSubmit = data => console.log(data);
-    const number = /[0-9]/g;
-    const english = /[a-z]/ig;
-    const spece = /[`~!@@#$%^&*|₩₩₩'₩";:₩/?]/gi;
+    const password = useRef({});
+    password.current = watch("password","");
     
     return (
         <div>
@@ -60,14 +59,9 @@ function Join(){
                                 className="input"
                                 id="pwd_conf"
                                 type="password"
-                                {...register("pwd_conf", {
-                                required: "비밀번호 확인이 되지 않았습니다.",
-                                validate: {
-                                    matchesPreviousPassword: (value) => {
-                                        const { pwd } = getValue();
-                                        return pwd === value || "비밀번호가 일치하지 않습니다."
-                                    }
-                                }
+                                {...register("pwd_conf",{
+                                    required:"비밀번호를 한번 더 입력해주세요.",
+                                    validate: value => value === password.current || "패스워드가 일치하지 않습니다."
                                 })}
                             />
                         </div>
@@ -117,12 +111,14 @@ function Join(){
                             {...register("birthdate",{
                                 required: "생년월일은 필수입니다."
                             })}
+                            
                         />
                     </div>
                 </div>
                 <div>
-                    <input className="join_btn" type="submit" value="회원가입"></input>
+                    <input className="join_btn" type="submit" value="회원가입" ></input>
                 </div>
+                
             </form>
         </div>
     )
