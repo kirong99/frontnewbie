@@ -1,18 +1,23 @@
-import React from "react";
-import Join from './Join.js';
+import React, { useState } from "react";
 import './login.css';
 import '../App.css';
-import { Link} from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
-function Login() {
+function Login(props) {
+
+    const [Id, setId] = useState('');
+    const [Password, setPassword] = useState('');
+
+
 
   return(
     <div className="login">
         <h2>로그인</h2>
-        <ul className="login_form">
-            <li><p>ID</p><input id='id' onkeyup='printId()'/></li>
-            <li><p>PW</p><input id='pw' onkeyup='printPw()'/></li>
-        </ul>
+        <form className="login_form">
+            <div className="login_input login_id"><label>ID</label><input id='id' onkeyup='printId()' name="id" /></div>
+            <div className="login_input login_pw"><label>PW</label><input id='pw' onkeyup='printPw()' name="password"  /></div>
+            <div className="login_input"><button className="login_btn">Login</button></div>
+        </form>
         <ul className="login_menu">
             <li><input type="checkbox" name="remember" value="ID_re" onclick='getCheckboxValue()'/>아이디 저장</li>
             <li>아이디, 비밀번호 찾기</li>

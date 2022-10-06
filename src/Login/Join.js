@@ -12,6 +12,12 @@ function Join(){
     const onSubmit = data => console.log(data);
     const password = useRef({});
     password.current = watch("password","");
+    const admin = "1234";
+    const validataId = (value) => {
+        if(admin.includes(value)){
+            return "중복입니다."
+        }
+    }
     
     return (
         <div>
@@ -27,12 +33,26 @@ function Join(){
                                 placeholder="아이디를 입력해주세요."
                                 {...register("id", {
                                 required: "아이디는 필수 입력입니다.",
+                                validate: validataId
                                 })}
                             />
-                            <button type="submit" className="dupli">중복확인</button>
+                            {/* <div className="dupli">
+                                <input 
+                                    type="button" 
+                                    className="dupli_btn"
+                                    value="중복확인"
+                                    id="conf_id"
+                                    {...register("conf_id",{
+                                        
+                                    })}
+                                    >
+                                </input>
+                                
+                            </div> */}
                         </div>
                 </div>
                 {errors.id && <small role="alert" className="alert">{errors.id.message}</small>}
+                {errors?.conf_id?.type === 'validate' && <p>{errors?.conf_id?.message}</p>}
                 <div className="text pwd">
                     <label htmlFor="pwd">비밀번호<span className="dot"></span></label>
                         <div>
