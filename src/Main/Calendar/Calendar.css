@@ -1,9 +1,15 @@
-.cal-header{width: 1920px;}
-.cal-header .header-cont{display: flex;justify-content: space-between;margin-top: 30px;}
-.cal-header .header-cont .prev, .cal-header .header-cont .next{flex-grow: 1;}
-.cal-header .header-cont .month{flex-grow: 2;text-align: center;}
-.cal-header .header-cont .prev{text-align: left;}
-.cal-header .header-cont .next{text-align: right;}
+.header-cont{width: 1920px;display: flex;justify-content: space-between;margin-top: 30px;}
+.header-cont .prev, .header-cont .next{flex-grow: 1;}
+.header-cont .month{flex-grow: 2;text-align: center;}
+.header-cont .prev{text-align: left;}
+.header-cont .next{text-align: right;}
 .btn{background-color: #fff;border: none;}
 .btn:hover{background-color: #ccc;}
 .btn .icon{width: 2em;height: 2em;}
+
+.body{margin: 0 auto;}
+.row{display: flex;justify-content: center;}
+.days{margin-top: 30px;}
+.cell{margin: 0 10px 10px 10px;width: calc(1720px / 7);border: 1px solid;height: 100px;border-radius: 10px;padding: 2px 0 0 10px;}
+.row:nth-of-type(1){margin-top: 20px;}
+.text{font-size: 0.7em;color: #ccc;}
