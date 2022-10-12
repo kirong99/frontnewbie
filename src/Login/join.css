@@ -8,13 +8,14 @@
 .join{width: 750px; margin-top:30px}
 .title{text-align: center;margin-bottom: 30px;font-family: 'Noto Sans KR'; font-weight: 700;}
 .join div{width:400px;margin-top: 10px;margin-bottom: 30px;}
-.text .id_box{display:flex;width: 530px;}
+.text .id_box{display:flex;width: 840px;}
 .text{font-size: 20px;font-family: 'Noto Sans KR';}
 .input{width: 400px;height: 30px;border: 1px solid #ffaeae;border-radius: 4px;padding-left:10px}
 .id_input{margin: 0;}
 .join_btn{width: 400px;border: none; height: 30px;border-radius: 4px;background-color: rgba(255,255,0,34%);cursor: pointer;}
 .join_btn:hover{background-color: #ffaeae;color: #fff;}
 .alert{position: relative;bottom: 30px;color: #ffaeae;left: 184px;}
-.dupli{width: 70px;border: none;background-color: rgba(255,255,0,0.34);border-radius: 4px;font-size: 12px;height: 34px;cursor: pointer;}
-.dupli:hover{background-color: #ffaeae;color: #fff;}
+div.dupli{margin-top: 0;margin-bottom: 0;margin-left: 10px;}
+.dupli_btn{width: 70px;border: none;background-color: rgba(255,255,0,0.34);border-radius: 4px;font-size: 12px;height: 34px;cursor: pointer;}
+.dupli_btn:hover{background-color: #ffaeae;color: #fff;}
 .text .dot{width: 5px;height: 5px;border-radius: 100%;background-color: #ffaeae;position: absolute;display: inline-block;vertical-align: top;}

@@ -1,0 +1,19 @@
+.header-cont{width: 1920px;display: flex;justify-content: space-between;margin-top: 30px;}
+.header-cont .prev, .header-cont .next{flex-grow: 1;}
+.header-cont .month{flex-grow: 2;text-align: center;}
+.header-cont .prev{text-align: left;}
+.header-cont .next{text-align: right;}
+.btn{background-color: #fff;border: none;}
+.btn:hover{background-color: #ccc;}
+.btn .icon{width: 2em;height: 2em;}
+
+.body{margin: 0 auto;}
+.row{display: flex;justify-content: center;}
+.days{margin-top: 30px;}
+.cell{margin: 0 10px 10px 10px;width: calc(1720px / 7);border: 1px solid;height: 100px;border-radius: 10px;padding: 2px 0 0 10px;}
+.row:nth-of-type(1){margin-top: 20px;}
+.text{font-size: 0.7em;color: #ccc;}
+
+.add{float: right;position: relative;right: 30px;width: 100px;height: 50px;}
+.add button{width: 100px;height: 50px;border: 1px solid #999;background-color: #fff;border-radius: 16px;}
+.add button:hover{background-color: #ffaeae;}
