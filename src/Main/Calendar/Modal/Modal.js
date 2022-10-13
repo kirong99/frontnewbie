@@ -11,6 +11,7 @@ function Modal() {
     return(
         <div className='modal'>
             <button onClick={showModal}>일정 추가</button>
+            <div className='modal_bg'></div>
             {modalOpen && <ModalBasic setModalOpen={setModalOpen} />}
         </div>
     )
