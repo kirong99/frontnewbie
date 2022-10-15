@@ -23,9 +23,12 @@ function ModalBasic({ setModalOpen, id, title, content, writer }) {
     })
 
     return(
-        <div className="container">
-            <button className="close" onClick={closeModal}>X</button>
-            <p>모달</p>
+        <div>
+            <div className='modal_bg'></div>
+            <div className="container">
+                <button className="close" onClick={closeModal}>X</button>
+                <p>모달</p>
+            </div>
         </div>
     )
 }
