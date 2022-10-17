@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext} from "react";
 import option_ico from '../image/option.png';
 import OptionNae from './Option';
+import ColorContext, {ColorConsumer} from './Color';
 
 function Todo(){
+  const {state} = useContext(ColorContext);
  const [option_dropdown, setOption] = useState(false);
 
     return(
@@ -16,7 +18,11 @@ function Todo(){
             <div><div className='line'></div><div className='circle'></div></div>
             <div><div className='line'></div><div className='circle'></div></div>
           </div>
-          <div className="option_com">
+          <div className="option_com"
+          style={{
+            background: state.color,
+        }}
+        >
 
             <button  className="option" 
               onClick={() => {
@@ -40,6 +46,7 @@ function Todo(){
 
     
 }
+
 
 
 export default Todo;
