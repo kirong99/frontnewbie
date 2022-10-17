@@ -15,7 +15,7 @@ function App() {
     <Routes>
       <Route element={<Header />}>
         <Route index element={<Todo />}/>
-        <Route path = "/Todo" element={<Todo />}/>s
+        <Route path = "/Todo" element={<Todo />}/>
         <Route path = "/Login" element={<Login />}/>
         <Route path = "/Join" element={<Join />}/>
         <Route path = "/Calendar" element={<Calendar />}/>
