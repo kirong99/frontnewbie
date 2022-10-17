@@ -20,14 +20,15 @@
     text-align: right;
 }
 .fc .fc-button-primary{
-    background-color:  #ffaeae;
+    background-color:  rgb(255 255 0 / 34%);
     border-color: #fff;
+    color: #111;
+    font-family: 'Leferi';
+    font-weight: 700;
 }
 .fc .fc-button-primary:hover{
-    /* background-color: rgb(255 255 0/ 34%); */
-}
-.fc-icon{
-    /* color: rgb(255 255 0); */
+    background-color: #ffaeae;
+    border: none;
 }
 .fc-day-sun a{
     color: red;

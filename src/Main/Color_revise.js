@@ -4,7 +4,6 @@ import { ColorConsumer } from './Color';
 
 const colors = ['red','orange','yellow','green','blue','indigo','violet'];
 
-
 function Color_revise(){
    
        return(
@@ -37,11 +36,6 @@ function Color_revise(){
 
 
             </div>
+       )}
 
-       )
-   
-       
-   }
-   
-   
-   export default Color_revise;
+export default Color_revise;
