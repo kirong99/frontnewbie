@@ -1,16 +1,13 @@
-import React from "react";
-import './Color_revise.css';
+import React from 'react';
 import { ColorConsumer } from './Color';
+
 
 const colors = ['red','orange','yellow','green','blue','indigo','violet'];
 
-function Color_revise(){
-   
-       return(
+const SelectColors = () => {
+    return (
         <div>
-            <div className="color_layer">
-                <h3>메모지 색상</h3>
-                <ColorConsumer>
+            <ColorConsumer>
                 {({actions})=>(
                     <div style={{display:'flex'}}>
                         {colors.map(color=>(
@@ -22,14 +19,16 @@ function Color_revise(){
                                     height: '24px',
                                     cursor: 'pointer',
                                 }}
-                                onClick={() => actions.setColor(color)}
+                                onClick={()=>actions.setColor(color)} // 왼쪽버튼클릭시
                             />
                         ))}
                     </div>
                 )}
-             </ColorConsumer>
-            </div>
+            </ColorConsumer>
+            <hr />
         </div>
-       )}
+    )
+}
 
-export default Color_revise;
+export default SelectColors
+

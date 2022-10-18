@@ -8,6 +8,8 @@
 .content .left .option img{width: 30px; position: absolute; top: 5px; left: 5px;}
 .content .right{width: 400px; height: 400px; float: right; margin-right: 285px; margin-top: 220px; background-color: #F7FF00; box-shadow: 10px 10px 10px #00000029;}
 .content .right .sticker{width: 212px; height: 53px; background-color: rgba(255, 159, 159, .85); margin-top: -26px;}
+.content .color_revise{position: absolute;bottom: 100px;left: 400px;}
+.contetn .btn.active{background-color: #fff;}
 
 .option_layout{width: 115px; border: 1px solid black; border-radius: 8px; margin-left: 25px;}
 .option_layout button{border: none; background: none; width: 115px; height: 30px;}
