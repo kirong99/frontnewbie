@@ -8,7 +8,10 @@
 .content .left .option img{width: 30px; position: absolute; top: 5px; left: 5px;}
 .content .right{width: 400px; height: 400px; float: right; margin-right: 285px; margin-top: 220px; background-color: #F7FF00; box-shadow: 10px 10px 10px #00000029;}
 .content .right .sticker{width: 212px; height: 53px; background-color: rgba(255, 159, 159, .85); margin-top: -26px;}
-.content .color_revise{position: absolute;bottom: 100px;left: 400px;}
+.content .color_revise{position: absolute; top: 790px;left: 455px;}
+.content .color_revise>button{border: none; background-color: white;}
+.content .color_revise>button:hover{box-shadow: 0 4px 0px -2px #ffaeae;}
+button.reset_button{margin-left: 10px;}
 .contetn .btn.active{background-color: #fff;}
 
 .option_layout{width: 115px; border: 1px solid black; border-radius: 8px; margin-left: 25px;}

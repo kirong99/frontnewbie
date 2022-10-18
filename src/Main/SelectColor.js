@@ -18,6 +18,7 @@ const SelectColors = () => {
                                     width: '24px',
                                     height: '24px',
                                     cursor: 'pointer',
+                                    margin: '10px 5px 0 0',
                                 }}
                                 onClick={()=>actions.setColor(color)} // 왼쪽버튼클릭시
                             />
@@ -25,7 +26,7 @@ const SelectColors = () => {
                     </div>
                 )}
             </ColorConsumer>
-            <hr />
+
         </div>
     )
 }
