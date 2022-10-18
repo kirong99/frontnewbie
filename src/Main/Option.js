@@ -1,6 +1,7 @@
 import '../main.css';
-import ColorRevise from './Color_revise';
 import React, { useState } from "react";
+import { ColorProvider } from './Color';
+import Color_revise from './Color_revise';
 
 function Option() {
     const [color, setColor] = useState(false);
@@ -13,9 +14,9 @@ function Option() {
                     onClick={() => {
                         setColor(!color);
                     }}
-                >색상 수정하기</button>
+                >색상 초기화하기</button>
             </div>
-            {color && <ColorRevise />}
+            {color && <Color_revise />}
         </div>
     )
 
