@@ -33,7 +33,7 @@ function Calendar(){
             )
           }else{
             return(
-              date.date.year + "년" + (date.date.month+1) + "월"
+              date.date.year + "년 " + (date.date.month+1) + "월"
             )
           }
         }}

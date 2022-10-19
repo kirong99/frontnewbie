@@ -3,7 +3,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 1px solid #000;
+    border: 1px solid #ffaeae;
     width: 700px;
     height: 500px;
     z-index: 999;
@@ -16,4 +16,114 @@
     background-color: rgba(255,255,255,0.8);
     position: absolute;
     top: 0%;
+}
+
+.container .text{
+    text-align: center;
+    margin: 30px 0 0 0;
+}
+
+.container .schedule{
+    margin: 0 auto;
+    height: 100px;
+}
+
+.container .schedule p {
+    text-align: center;
+    font-size: 16px;
+    margin: 20px 0;
+}
+
+.container .schedule input{
+    width: 400px;
+    height: 30px;
+    display: flex;
+    border-radius: 8px;
+    border: 1px solid #ffaeae;
+}
+
+.date{
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    position: relative;
+    bottom: 10px;
+}
+
+.react-datepicker-wrapper:nth-of-type(1){
+    margin-bottom: 10px;
+}
+
+.react-datepicker-ignore-onclickoutside{
+    width: 300px;
+    height: 30px;
+    padding: 5px;
+}
+
+.react-datepicker-popper{
+    transform: translate(0px, 270px);
+}
+
+.react-datepicker__month{
+    margin: -0.5rem;
+}
+
+.react-datepicker__input-container input[type="text"]{
+    width: 300px;
+    height: 40px;
+    border: 1px solid #ffaeae;
+    border-radius: 8px;
+}
+
+.close{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #fff;
+    border: 2px solid #000;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+.addSche{
+    transform: translate(-50%, -50%);
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    background-color: #fff;
+    cursor: pointer;
+    width: 100px;
+    height: 40px;
+    border: 1px solid #999;
+    border-radius: 16px;
+}
+
+.addSche:hover{
+    border: none;
+    background-color: #ffaeae;
+    color: #fff;
+}
+
+.modal_add{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    background-color: #fff;
+    border: 1px solid #999;
+    width: 150px;
+    height: 30px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.modal_add:hover{
+    background-color: #ffaeae;
+    border-color: #ffaeae;
+}
+
+.react-datepicker__input-container .react-datepicker__close-icon{
+    right: 140px;
 }

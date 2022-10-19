@@ -7,10 +7,10 @@ function Modal() {
     const showModal = () => {
         setModalOpen(true);
     };
-
+    
     return(
         <div className='modal'>
-            <button onClick={showModal}>일정 추가</button>
+            <button className='modal_add' onClick={showModal}>일정 추가</button>
             {modalOpen && <ModalBasic setModalOpen={setModalOpen} />}
         </div>
     )
