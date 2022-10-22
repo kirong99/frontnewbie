@@ -19,6 +19,7 @@
     "date-fns": "^2.29.3",
     "express": "^4.18.1",
     "fullcalendar-year-view": "^0.0.3",
+    "moment": "^2.29.4",
     "mysql": "^2.18.1",
     "node-sass": "^7.0.3",
     "react": "^18.2.0",
