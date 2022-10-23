@@ -1,15 +1,26 @@
 import React, { useState, useContext} from "react";
+import ColorContext, {ColorConsumer} from './Color';
 import Note from "./Note";
 import SelectColors from "./SelectColor";
 import { ColorProvider } from './Color';
 
 function Todo(){
+    const {state} = useContext(ColorContext);
+    // 왼쪽 색상 변경
     const reset = document.getElementsByClassName("left");
     const [color,setColor] = useState(false);
     const tab = useState('white');
     const reset_note = () => {
       reset = {tab}
     }
+    // 오른쪽 색상 변경
+    const reset2 = document.getElementsByClassName("right");
+    const [postcolor,setPostcolor] = useState(false);
+    const tab2 = useState('yellow');
+    const reset_post = () => {
+      reset2 = {tab2}
+    }
+    
   
     return(
       <div className='content'>
@@ -21,10 +32,17 @@ function Todo(){
             <button onClick={reset_note} className="reset_button">초기화</button>
             {color && <SelectColors />}
           </div>
-        </ColorProvider>
-        <div className='right'>
+        
+        <div className='right' style={{background: state.postcolor}}>
           <div className='sticker'></div>
+            
         </div>
+        <div className="post_color_revise">
+            <button onClick={() => {setPostcolor(!postcolor)}}>포스트잇 색상 수정</button>
+            <button onClick={reset_post} className="reset_button">초기화</button>
+            {postcolor && <SelectColors />}
+          </div>
+        </ColorProvider>
       </div>
   )
 
