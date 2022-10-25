@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState,useRef } from "react";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import Modal from "./Modal/Modal";
+import Moment from 'moment';
 
 import events from "./events";
 
@@ -52,6 +53,7 @@ function Calendar(){
         timeZone="Asia/Seoul"
       />
       <Modal />
+      
     </div>
   )
 }
