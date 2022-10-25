@@ -1,22 +1,27 @@
 import { getDate, parseISO } from "date-fns";
 
+const Event = ({title}) =>{
+    console.log(title);
+    title={title}
+}
+
 const events=[
     { title: 'event1', start: '2022-10-12'},
     { title: 'event2', start: '2022-10-22'}
   ]
 
-function Date(dayString){
-    const today = new Date();
-    const year = today.getFullYear().toString();
-    let month = (today.getMonth + 1).toString();
+// function Date(dayString){
+//     const today = new Date();
+//     const year = today.getFullYear().toString();
+//     let month = (today.getMonth + 1).toString();
 
-    if(month.length === 1){
-        month = "0" + month
-    }
+//     if(month.length === 1){
+//         month = "0" + month
+//     }
 
-    return (
-        dayString.replace("YEAR",year).replace("MONTH",month)
-    );
-}
+//     return (
+//         dayString.replace("YEAR",year).replace("MONTH",month)
+//     );
+// }
 
-export default events;
+export default Event;

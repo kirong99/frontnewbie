@@ -5,6 +5,7 @@ import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import Modal from "./Modal/Modal";
 import Moment from 'moment';
+import Event from "./events";
 
 import events from "./events";
 
@@ -14,7 +15,21 @@ import '@fullcalendar/daygrid/main.css';
 
 import './style.css'
 
-function Calendar(){
+function Calendar({title}){
+  const [data,setData] = useState([]);
+
+  const dataId = useRef(0);
+
+  const onCreate = (title) => {
+    const created_date = new Date.getDate();
+    const newItem = {
+      title,
+      created_date,
+      id: dataId.current
+    }
+    dataId.current += 1;
+    setData([newItem, ...data])
+  }
   return(
     <div className="App" id="calendar">
       <FullCalendar
@@ -25,7 +40,7 @@ function Calendar(){
           center: 'title',
           right: 'prevYear,dayGridMonth,timeGridWeek,timeGridDay,nextYear'
         }}
-        events={events}
+        events={title}
         titleFormat={function(date){
           const day = document.querySelector("fc-timeGridDay-button");
           if(day){
@@ -53,7 +68,6 @@ function Calendar(){
         timeZone="Asia/Seoul"
       />
       <Modal />
-      
     </div>
   )
 }

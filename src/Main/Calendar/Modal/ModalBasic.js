@@ -1,10 +1,10 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import "./Modal.css";
 import DatePicker from 'react-datepicker';
 
 import "react-datepicker/dist/react-datepicker.css";
 
-function ModalBasic({ setModalOpen }) {
+function ModalBasic({ setModalOpen, onCreate }) {
     // 모달 끄기 
     const closeModal = () => {
         setModalOpen(false);
@@ -12,33 +12,25 @@ function ModalBasic({ setModalOpen }) {
 
     const modalRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        const handler = () => {
-            if(modalRef.current && !modalRef.current.contains()){
-                setModalOpen(false);
-            }
-        }
-        document.addEventListener('mousedown',handler);
-
-        return() => {
-            document.removeEventListener('mousedown',handler);
-        }
-    })
 
     const [state, setState] = useState({
-        content : ""
+        title : "",
     })
 
     const handleChangeState = (e) => {
         console.log(e.target.value);
         setState({
             ...state,
-            [e.target.name] : e.target.value
+            [e.target.name] : e.target.value,
         })
     }
 
     const handleSubmit = () => {
-        alert('저장 성공')
+        onCreate(state.title);
+        alert('저장 성공');
+        setState({
+            title: "",
+        });
     }
 
     const StartSche = () => {
@@ -79,13 +71,11 @@ function ModalBasic({ setModalOpen }) {
                 <h2 className="text">일정 추가</h2>
                 <div className="schedule">
                     <p>일정</p>
-                    <input name="content" value={state.content} onChange={(e) => {
-                        setState({handleChangeState});
-                    }}></input>
+                    <input name="title" value={state.title} onChange={handleChangeState}></input>
                 </div>
                 <div className="date">
                     <p>시작 날짜<StartSche /></p>
-                    <p>종료 날짜<EndSche /></p>
+                    <p>종료 날짜<EndSche/></p>
                 </div>
                 <button className="close" onClick={closeModal}>X</button>
                 <button className="addSche" onClick={handleSubmit}>일정 추가</button>
