@@ -3,8 +3,11 @@ import ColorContext, {ColorConsumer} from './Color';
 import Note from "./Note";
 import SelectColors from "./SelectColor";
 import { ColorProvider } from './Color';
+import { da } from "date-fns/locale";
+import Moment from 'moment'
 
-function Todo(){
+function Todo( { event }){
+
     const {state} = useContext(ColorContext);
     // 왼쪽 색상 변경
     const reset = document.getElementsByClassName("left");
@@ -13,6 +16,8 @@ function Todo(){
     const reset_note = () => {
       reset = {tab}
     }
+    const formatDate = Moment().format('YYYY-MM-DD');
+
     // 오른쪽 색상 변경
     const reset2 = document.getElementsByClassName("right");
     const [postcolor,setPostcolor] = useState(false);
@@ -21,7 +26,6 @@ function Todo(){
       reset2 = {tab2}
     }
     
-  
     return(
       <div className='content'>
         <ColorProvider>
@@ -35,7 +39,13 @@ function Todo(){
         
         <div className='right' style={{background: state.postcolor}}>
           <div className='sticker'></div>
-            
+          <div>
+              {event.map((it, idx)=>(
+                <div key={idx}>
+                  <div style={{display: formatDate === it.start ? "flex" : "none"}}>일정 : {it.title}</div>
+                </div>
+              ))}
+            </div>
         </div>
         <div className="post_color_revise">
             <button onClick={() => {setPostcolor(!postcolor)}}>포스트잇 색상 수정</button>

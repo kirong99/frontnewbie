@@ -36,10 +36,11 @@ function ModalBasic({ setModalOpen }) {
             [e.target.name] : e.target.value
         })
     }
+
     const handleSubmit = () => {
-        console.log(state)
         alert('저장 성공')
     }
+
     const StartSche = () => {
         const [startDate, setStartDate] = useState(new Date());
         const [endDate, setEndDate] = useState(new Date());
