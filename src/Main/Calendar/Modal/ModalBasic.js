@@ -75,7 +75,7 @@ function ModalBasic({ setModalOpen, onCreate }) {
                 </div>
                 <div className="date">
                     <p>시작 날짜<StartSche /></p>
-                    <p>종료 날짜<EndSche/></p>
+                    <p>종료 날짜<EndSche /></p>
                 </div>
                 <button className="close" onClick={closeModal}>X</button>
                 <button className="addSche" onClick={handleSubmit}>일정 추가</button>

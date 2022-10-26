@@ -5,6 +5,9 @@ import SelectColors from "./SelectColor";
 import { ColorProvider } from './Color';
 import { da } from "date-fns/locale";
 import Moment from 'moment'
+import events from "./Calendar/events";
+import SelectPostColors from "./SelectPostColor";
+import Post from "./Post";
 
 function Todo( { event }){
 
@@ -29,30 +32,22 @@ function Todo( { event }){
     return(
       <div className='content'>
         <ColorProvider>
-          <Note className="gg" />
+          <Note />
           <div className="color_revise">
             <button onClick={() => {setColor(!color)}}>노트 색상 수정</button>
-            
             <button onClick={reset_note} className="reset_button">초기화</button>
             {color && <SelectColors />}
           </div>
-        
-        <div className='right' style={{background: state.postcolor}}>
-          <div className='sticker'>{formatDate}</div>
-          <div>
-              {event.map((it, idx)=>(
-                <div key={idx}>
-                  <div style={{display: formatDate === it.start ? "flex" : "none"}}>일정 : {formatDate === it.start ? it.title : "일정이 없습니다."}</div>
-                </div>
-              ))}
-            </div>
-        </div>
-        <div className="post_color_revise">
-            <button onClick={() => {setPostcolor(!postcolor)}}>포스트잇 색상 수정</button>
-            <button onClick={reset_post} className="reset_button">초기화</button>
-            {postcolor && <SelectColors />}
+
+          
+          <Post event={events} />
+          <div className="post_color_revise">
+              <button onClick={() => {setPostcolor(!postcolor)}}>포스트잇 색상 수정</button>
+              <button onClick={reset_post} className="reset_button">초기화</button>
+              {postcolor && <SelectPostColors />}
           </div>
         </ColorProvider>
+        
       </div>
   )
 

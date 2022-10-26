@@ -29,7 +29,7 @@ function Modal() {
             <button className='modal_add' onClick={showModal}>일정 추가</button>
             {modalOpen && <ModalBasic onCreate={onCreate} setModalOpen={setModalOpen} />}
             <DataList dataList={data} />
-            <Event dataList={data} />
+            {/* <Event dataList={data} /> */}
         </div>
     )
 }

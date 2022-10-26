@@ -1,10 +1,11 @@
 import React, { createContext, useCallback, useState } from 'react';
 
 const ColorContext = createContext({
-    state : { color : 'inherit', postcolor : 'inherit'},
+    state : { color : 'inherit', postcolor : 'yellow', stickercolor: 'red'},
     actions : {
         setColor : () => {},
         setPostcolor : () => {},
+        setStickercolor : () => {}
     },
 });
 
@@ -12,9 +13,10 @@ const ColorProvider = ({children}) => {
     
     const [color, setColor] = useState('white');
     const [postcolor, setPostcolor] = useState('yellow');
+    const [stickercolor, setStickercolor] = useState('red')
     const value = {
-        state : { color, postcolor },
-        actions : { setColor, setPostcolor },
+        state : { color, postcolor, stickercolor },
+        actions : { setColor, setPostcolor, setStickercolor },
     };
 
     return (
