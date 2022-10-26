@@ -1,5 +1,6 @@
 import { useState } from "react";
 import DataItem from "./DataItem";
+import events from "./events";
 
 const DataList = ({ dataList }) => {
     console.log(dataList)
@@ -8,7 +9,7 @@ const DataList = ({ dataList }) => {
             <h2>리스트</h2>
             <div className="DataItemBox">
                 {dataList.map((it,idx)=>(
-                    <DataItem key={idx} {...it}/>
+                    <events key={idx} {...it}/>
                 ))}
             </div>
         </div>

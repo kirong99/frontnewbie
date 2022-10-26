@@ -9,7 +9,7 @@ import events from "./Calendar/events";
 import SelectPostColors from "./SelectPostColor";
 import Post from "./Post";
 
-function Todo( { event }){
+function Todo(){
 
     const {state} = useContext(ColorContext);
     // 왼쪽 색상 변경
@@ -39,7 +39,7 @@ function Todo( { event }){
             {color && <SelectColors />}
           </div>
 
-          
+
           <Post event={events} />
           <div className="post_color_revise">
               <button onClick={() => {setPostcolor(!postcolor)}}>포스트잇 색상 수정</button>

@@ -15,8 +15,10 @@ function Modal() {
     const dataId = useRef(0);
 
     const onCreate = (title) => {
+      const date = '2022-10-26'
       const newItem = {
         title,
+        date,
         id: dataId.current
       }
       dataId.current += 1;

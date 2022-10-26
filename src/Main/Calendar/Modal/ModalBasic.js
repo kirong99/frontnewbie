@@ -15,6 +15,7 @@ function ModalBasic({ setModalOpen, onCreate }) {
 
     const [state, setState] = useState({
         title : "",
+        date : "2022-10-26"
     })
 
     const handleChangeState = (e) => {
@@ -26,7 +27,7 @@ function ModalBasic({ setModalOpen, onCreate }) {
     }
 
     const handleSubmit = () => {
-        onCreate(state.title);
+        onCreate(state.title, state.date);
         alert('저장 성공');
         setState({
             title: "",
