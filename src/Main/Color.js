@@ -12,8 +12,8 @@ const ColorContext = createContext({
 const ColorProvider = ({children}) => {
     
     const [color, setColor] = useState('white');
-    const [postcolor, setPostcolor] = useState('yellow');
-    const [stickercolor, setStickercolor] = useState('red')
+    const [postcolor, setPostcolor] = useState('#fefeb2');
+    const [stickercolor, setStickercolor] = useState('#ffafaf')
     const value = {
         state : { color, postcolor, stickercolor },
         actions : { setColor, setPostcolor, setStickercolor },

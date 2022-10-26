@@ -24,7 +24,7 @@ function Todo( { event }){
     // 오른쪽 색상 변경
     const reset2 = document.getElementsByClassName("right");
     const [postcolor,setPostcolor] = useState(false);
-    const tab2 = useState('yellow');
+    const tab2 = useState('#fefeb2');
     const reset_post = () => {
       reset2 = {tab2}
     }
