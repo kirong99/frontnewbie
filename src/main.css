@@ -7,7 +7,7 @@
 .content .left .option{width: 40px; height: 40px; position: relative; border-radius: 50%; margin-top: 25px; margin-left: 40px; background: rgba(255, 159, 159, .85); border: none; cursor: pointer;}
 .content .left .option img{width: 30px; position: absolute; top: 5px; left: 5px;}
 .content .right{width: 400px; height: 400px; float: right; margin-right: 285px; margin-top: 220px; box-shadow: 10px 10px 10px #00000029;}
-.content .right .sticker{width: 212px; height: 53px; background-color: rgba(255, 159, 159, .85); margin-top: -26px;}
+.content .right .sticker{width: 212px; height: 53px; background-color: rgba(255, 159, 159, .85); margin-top: -26px;text-align: center;line-height: 53px;font-size: 20px;font-weight: 700;}
 .content .color_revise{position: absolute; top: 790px;left: 455px;}
 .content .color_revise>button{border: none; background-color: white;}
 .content .color_revise>button:hover{box-shadow: 0 4px 0px -2px #ffaeae;}

@@ -23,14 +23,4 @@ function App() {
       </Route>
     </Routes>
 )}
-
-// function App(){
-//   return(
-//     <div>
-//       <Header />
-//       <Todo />
-//     </div>
-//   )
-// }
-
 export default App;
