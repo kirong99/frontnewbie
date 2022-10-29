@@ -10,11 +10,11 @@ function Option() {
         <div>
             <div className="option_layout">
                 <button className="revise">내용 수정하기</button>
-                <button className="color_revise"
+                {/* <button className="color_revise"
                     onClick={() => {
                         setColor(!color);
                     }}
-                >색상 초기화하기</button>
+                >색상 초기화하기</button> */}
             </div>
             {color && <Color_revise />}
         </div>
