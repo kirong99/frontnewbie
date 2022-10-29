@@ -8,10 +8,10 @@ const Post = ({event}) => {
     return (
         <div className='right' style={{background: state.postcolor}}>
             <div className='sticker' style={{background : state.stickercolor}}>{formatDate}</div>
-            <div>
+            <div class="right_box">
                 {event.map((it, idx)=>(
                   <div key={idx}>
-                    <div style={{display: formatDate === it.start ? "flex" : "none"}}>일정 : {formatDate === it.start ? it.title : "일정이 없습니다."}</div>
+                    <div class="sche" style={{display: formatDate === it.start ? "flex" : "none"}}>{formatDate === it.start ? it.title : "일정이 없습니다."}</div>
                   </div>
                 ))}
               </div>
@@ -19,4 +19,4 @@ const Post = ({event}) => {
     )
 }
 
-export default Post
+export default Post;

@@ -8,6 +8,8 @@
 .content .left .option img{width: 30px; position: absolute; top: 5px; left: 5px;}
 .content .right{width: 400px; height: 400px; float: right; margin-right: 285px; margin-top: 220px; box-shadow: 10px 10px 10px #00000029;}
 .content .right .sticker{width: 212px; height: 53px; background-color: rgba(255, 159, 159, .85); margin-top: -26px;text-align: center;line-height: 53px;font-size: 20px;font-weight: 700;}
+.content .right .right_box{height: calc(100% - 27px); align-items: center; display: flex; flex-direction: column; justify-content: center;}
+.content .right .sche{font-size: 22px; justify-content: center; height: 100%; align-items: center;}
 .content .color_revise{position: absolute; top: 790px;left: 455px;}
 .content .color_revise>button{border: none; background-color: white;}
 .content .color_revise>button:hover{box-shadow: 0 4px 0px -2px #ffaeae;}
