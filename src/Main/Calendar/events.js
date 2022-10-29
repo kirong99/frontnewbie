@@ -1,7 +1,13 @@
-const events=[
-    { title: 'event1', start: '2022-10-12'},
-    { title: 'event2', start: '2022-10-22'},
-    { title: 'event3', start: '2022-10-26'},
-  ]
+import EventList from "./EventList";
 
-export default events;
+const Events = ( { dataList } ) =>{
+  return(
+    <div>
+      {dataList && dataList.map((it,idx)=>(
+        <EventList key={idx} {...it}/>
+      ))}
+    </div>
+  )
+}
+
+export default Events;

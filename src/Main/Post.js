@@ -14,8 +14,8 @@ const Post = ({event}) => {
                     <div class="sche" style={{display: formatDate === it.start ? "flex" : "none"}}>{formatDate === it.start ? it.title : "일정이 없습니다."}</div>
                   </div>
                 ))}
-              </div>
           </div>
+        </div>
     )
 }
 

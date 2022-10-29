@@ -1,18 +1,18 @@
 import { useState } from "react";
 import DataItem from "./DataItem";
+import Events from "./Events";
 
 const DataList = ({ dataList }) => {
     console.log(dataList)
-    return (
-        <div className="DataList">
-            <h2>리스트</h2>
-            <div className="DataItemBox">
+    
+
+
+
                 {dataList.map((it,idx)=>(
-                    <DataItem key={idx} {...it}/>
+                    <Events key={idx} {...it}/>
                 ))}
-            </div>
-        </div>
-    )
+ 
+    
 }
 
 
