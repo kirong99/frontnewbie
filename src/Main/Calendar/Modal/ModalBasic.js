@@ -1,21 +1,27 @@
-import { useRef, useState } from "react";
-import "./Modal.css";
+import React, { useState,useRef } from 'react';
+import DataList from '../DataList';
+import Events from '../Events';
 import DatePicker from 'react-datepicker';
+import "./Modal.css";
+import moment from 'moment';
 
 import "react-datepicker/dist/react-datepicker.css";
 
-function ModalBasic({ setModalOpen, onCreate }) {
+
+const ModalBasic = ({ setModalOpen, onCreate }) => {
+    const [startDate, setStartDate] = useState(new Date());
+    const time = moment(startDate).format('YYYY-MM-DD')
+    
+    console.log(time)
+
     // 모달 끄기 
     const closeModal = () => {
         setModalOpen(false);
     };
 
-    const modalRef = useRef<HTMLDivElement>(null);
-
-
     const [state, setState] = useState({
         title : "",
-        date : "2022-10-26"
+        date : time
     })
 
     const handleChangeState = (e) => {
@@ -30,39 +36,44 @@ function ModalBasic({ setModalOpen, onCreate }) {
         alert('저장 성공');
         setState({
             title: "",
+            date: `"${time}"`
         });
-    }
 
+
+    }
+    console.log(state.date)
     const StartSche = () => {
-        const [startDate, setStartDate] = useState(new Date());
-        const [endDate, setEndDate] = useState(new Date());
+        // const [endDate, setEndDate] = useState(new Date());
         return (
           <DatePicker
+            // name="date"
+            // value={state.date}
             selected={startDate}
             onChange={date => setStartDate(date)} 
+            // onSelect={handleChangeState}
             selectsStart
             startDate={startDate}
-            endDate={endDate}
+            // endDate={endDate}
             isClearable
             />
         );
       };
 
-      const EndSche = () => {
-        const [startDate, setStartDate] = useState(new Date());
-        const [endDate, setEndDate] = useState(new Date());
-        return (
-          <DatePicker
-            selected={endDate}
-            onChange={date => setEndDate(date)} 
-            selectsStart
-            startDate={startDate}
-            endDate={endDate}
-            minDate={startDate}
-            isClearable
-            />
-        );
-      };
+    //   const EndSche = () => {
+    //     const [startDate, setStartDate] = useState(new Date());
+    //     const [endDate, setEndDate] = useState(new Date());
+    //     return (
+    //       <DatePicker
+    //         selected={endDate}
+    //         onChange={date => setEndDate(date)} 
+    //         selectsStart
+    //         startDate={startDate}
+    //         endDate={endDate}
+    //         // minDate={startDate}
+    //         isClearable
+    //         />
+    //     );
+    //   };
 
     return(
         <div>
@@ -75,7 +86,7 @@ function ModalBasic({ setModalOpen, onCreate }) {
                 </div>
                 <div className="date">
                     <p>시작 날짜<StartSche /></p>
-                    <p>종료 날짜<EndSche /></p>
+                    {/* <p>종료 날짜<EndSche /></p> */}
                 </div>
                 <button className="close" onClick={closeModal}>X</button>
                 <button className="addSche" onClick={handleSubmit}>일정 추가</button>

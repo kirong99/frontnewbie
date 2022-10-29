@@ -40,7 +40,7 @@ function Todo(){
           </div>
 
 
-          <Post event={Events.events} />
+          <Post  />
           <div className="post_color_revise">
               <button onClick={() => {setPostcolor(!postcolor)}}>포스트잇 색상 수정</button>
               <button onClick={reset_post} className="reset_button">초기화</button>
