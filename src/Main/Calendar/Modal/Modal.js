@@ -1,7 +1,7 @@
 import { useState,useRef } from 'react';
 import ModalBasic from './ModalBasic';
 import DataList from '../DataList';
-import Event from '../events';
+import Events from '../Events';
 
 function Modal() {
     const [modalOpen, setModalOpen] = useState(false);
@@ -28,10 +28,10 @@ function Modal() {
     
     return(
         <div className='modal'>
-            <button className='modal_add' onClick={showModal}>일정 추가</button>
+            <button className='modal_add' onClick={showModal} >일정 추가</button>
             {modalOpen && <ModalBasic onCreate={onCreate} setModalOpen={setModalOpen} />}
-            <DataList dataList={data} />
-            {/* <Event dataList={data} /> */}
+            {/* <DataList dataList={data} /> */}
+            <Events dataList={data} />
         </div>
     )
 }

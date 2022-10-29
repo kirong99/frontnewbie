@@ -4,7 +4,6 @@ const DataItem = ({title, date}) => {
             <div className="title">{title}{date}</div>
         </div>
     )
-
 }
 
 export default DataItem;

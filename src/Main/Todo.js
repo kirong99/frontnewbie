@@ -5,7 +5,7 @@ import SelectColors from "./SelectColor";
 import { ColorProvider } from './Color';
 import { da } from "date-fns/locale";
 import Moment from 'moment'
-import events from "./Calendar/events";
+import Events from "./Calendar/Events";
 import SelectPostColors from "./SelectPostColor";
 import Post from "./Post";
 
@@ -40,7 +40,7 @@ function Todo(){
           </div>
 
 
-          <Post event={events} />
+          <Post event={Events.events} />
           <div className="post_color_revise">
               <button onClick={() => {setPostcolor(!postcolor)}}>포스트잇 색상 수정</button>
               <button onClick={reset_post} className="reset_button">초기화</button>
