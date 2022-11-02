@@ -1,4 +1,4 @@
-import React, { useState,useRef } from "react";
+import React, { useState,useRef, useEffect } from "react";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
@@ -10,6 +10,7 @@ import '@fullcalendar/common/main.css';
 import '@fullcalendar/daygrid/main.css';
 
 import './style.css'
+import LocalStorage from "./LocalStorage";
 
 
 
@@ -30,7 +31,13 @@ const Calendar = () => {
       setDate([newItem , ...data])
       console.log(data)
   }
-  
+
+  useEffect(()=>{
+    window.localStorage.setItem("event",JSON.stringify(data))
+  }, [data])
+
+  const event = JSON.parse(localStorage.getItem("event"))
+
   return(
     <div className="App" id="calendar">
       <FullCalendar
@@ -41,7 +48,7 @@ const Calendar = () => {
           center: 'title',
           right: 'prevYear,dayGridMonth,timeGridWeek,timeGridDay,nextYear'
         }}
-        events={data}
+        events={event}
         titleFormat={function(date){
           const day = document.querySelector("fc-timeGridDay-button");
           if(day){
@@ -72,7 +79,9 @@ const Calendar = () => {
           <button className='modal_add' onClick={showModal} >일정 추가</button>
           {modalOpen && <ModalBasic onCreate={onCreate} setModalOpen={setModalOpen}/>}
       </div>
+      <LocalStorage value={ data } />
     </div>
+    
   )
 }
 

@@ -10,9 +10,7 @@ const ModalBasic = ({ setModalOpen, onCreate }) => {
     const [startDate, setStartDate] = useState(new Date());
     const time = moment(startDate).format('YYYY-MM-DD');
     const today = moment(new Date()).format('YYYY-MM-DD');
-    console.log(today);
-    
-    console.log(time)
+
 
     // 모달 끄기 
     const closeModal = () => {
@@ -41,7 +39,6 @@ const ModalBasic = ({ setModalOpen, onCreate }) => {
 
 
     }
-    console.log(state.date)
     const StartSche = () => {
         // const [endDate, setEndDate] = useState(new Date());
         return (
