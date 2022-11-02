@@ -1,6 +1,4 @@
 import React, { useState,useRef } from 'react';
-import DataList from '../DataList';
-import Events from '../Events';
 import DatePicker from 'react-datepicker';
 import "./Modal.css";
 import moment from 'moment';
@@ -10,7 +8,9 @@ import "react-datepicker/dist/react-datepicker.css";
 
 const ModalBasic = ({ setModalOpen, onCreate }) => {
     const [startDate, setStartDate] = useState(new Date());
-    const time = moment(startDate).format('YYYY-MM-DD')
+    const time = moment(startDate).format('YYYY-MM-DD');
+    const today = moment(new Date()).format('YYYY-MM-DD');
+    console.log(today);
     
     console.log(time)
 
@@ -21,7 +21,7 @@ const ModalBasic = ({ setModalOpen, onCreate }) => {
 
     const [state, setState] = useState({
         title : "",
-        date : time
+        date : time,
     })
 
     const handleChangeState = (e) => {
@@ -36,7 +36,7 @@ const ModalBasic = ({ setModalOpen, onCreate }) => {
         alert('저장 성공');
         setState({
             title: "",
-            date: `"${time}"`
+            date: today
         });
 
 
@@ -46,11 +46,9 @@ const ModalBasic = ({ setModalOpen, onCreate }) => {
         // const [endDate, setEndDate] = useState(new Date());
         return (
           <DatePicker
-            // name="date"
-            // value={state.date}
             selected={startDate}
             onChange={date => setStartDate(date)} 
-            // onSelect={handleChangeState}
+            onSelect={handleChangeState}
             selectsStart
             startDate={startDate}
             // endDate={endDate}
@@ -81,11 +79,11 @@ const ModalBasic = ({ setModalOpen, onCreate }) => {
             <div className="container">
                 <h2 className="text">일정 추가</h2>
                 <div className="schedule">
-                    <p>일정</p>
+                    일정
                     <input name="title" value={state.title} onChange={handleChangeState}></input>
                 </div>
                 <div className="date">
-                    <p>시작 날짜<StartSche /></p>
+                    시작 날짜<StartSche />
                     {/* <p>종료 날짜<EndSche /></p> */}
                 </div>
                 <button className="close" onClick={closeModal}>X</button>

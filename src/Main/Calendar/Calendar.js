@@ -10,7 +10,6 @@ import '@fullcalendar/common/main.css';
 import '@fullcalendar/daygrid/main.css';
 
 import './style.css'
-import EventList from "./EventList";
 
 
 
@@ -29,6 +28,7 @@ const Calendar = () => {
       }
       dataId.current += 1;
       setDate([newItem , ...data])
+      console.log(data)
   }
   
   return(

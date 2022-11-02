@@ -26,12 +26,8 @@
 .container .schedule{
     margin: 0 auto;
     height: 100px;
-}
-
-.container .schedule p {
     text-align: center;
-    font-size: 16px;
-    margin: 20px 0;
+    margin-top: 30px;
 }
 
 .container .schedule input{
@@ -40,6 +36,7 @@
     display: flex;
     border-radius: 8px;
     border: 1px solid #ffaeae;
+    margin-top: 20px;
 }
 
 .date{
@@ -47,7 +44,7 @@
     text-align: center;
     line-height: 50px;
     position: relative;
-    bottom: 10px;
+    bottom: -20px;
 }
 
 .react-datepicker-wrapper:nth-of-type(1){
