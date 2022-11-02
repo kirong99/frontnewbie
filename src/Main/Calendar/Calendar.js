@@ -5,12 +5,9 @@ import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import ModalBasic from "./Modal/ModalBasic";
 import Post from "../Post";
-
 import '@fullcalendar/common/main.css';
 import '@fullcalendar/daygrid/main.css';
-
 import './style.css'
-import EventList from "./EventList";
 
 
 

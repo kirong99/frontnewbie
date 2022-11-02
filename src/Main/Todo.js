@@ -3,9 +3,7 @@ import ColorContext, {ColorConsumer} from './Color';
 import Note from "./Note";
 import SelectColors from "./SelectColor";
 import { ColorProvider } from './Color';
-import { da } from "date-fns/locale";
 import Moment from 'moment'
-import Events from "./Calendar/Events";
 import SelectPostColors from "./SelectPostColor";
 import Post from "./Post";
 

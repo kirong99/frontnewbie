@@ -1,17 +1,12 @@
 import React, { useState,useRef } from 'react';
-import DataList from '../DataList';
-import Events from '../Events';
 import DatePicker from 'react-datepicker';
 import "./Modal.css";
 import moment from 'moment';
-
 import "react-datepicker/dist/react-datepicker.css";
-
 
 const ModalBasic = ({ setModalOpen, onCreate }) => {
     const [startDate, setStartDate] = useState(new Date());
     const time = moment(startDate).format('YYYY-MM-DD')
-    
     console.log(time)
 
     // 모달 끄기 
