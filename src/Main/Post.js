@@ -2,19 +2,20 @@ import { useContext, useState } from 'react';
 import ColorContext from './Color';
 import Moment from 'moment'
 
-const Post = ({dataList}) => {
-    console.log(dataList)
+const Post = () => {
+
+    const event = JSON.parse(localStorage.getItem("event"));
     const {state} = useContext(ColorContext);
     const formatDate = Moment().format('YYYY-MM-DD');
     return (
         <div className='right' style={{background: state.postcolor}}>
             <div className='sticker' style={{background : state.stickercolor}}>{formatDate}</div>
             <div class="right_box">
-                {/* {events.map((it, idx)=>(
+                {event && event.map((it, idx)=>(
                   <div key={idx}>
-                    <div class="sche" style={{display: formatDate === it.start ? "flex" : "none"}}>{formatDate === it.start ? it.title : "일정이 없습니다."}</div>
+                    <div class="sche" style={{display: formatDate === it.date ? "flex" : "none"}}>{it.title}</div>
                   </div>
-                ))} */}
+                ))}
           </div>
         </div>
     )
