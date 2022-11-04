@@ -26,7 +26,6 @@ const ModalBasic = ({ setModalOpen, onCreate }) => {
             [e.target.name] : e.target.value,
         })
     }
-    
 
     const handleSubmit = () => {
         onCreate(state.title, state.date);
@@ -37,7 +36,6 @@ const ModalBasic = ({ setModalOpen, onCreate }) => {
         });
     }
     const StartSche = () => {
-        // const [endDate, setEndDate] = useState(new Date());
         return (
           <DatePicker
             selected={startDate}
@@ -51,27 +49,10 @@ const ModalBasic = ({ setModalOpen, onCreate }) => {
             }} 
             selectsStart
             startDate={startDate}
-            // endDate={endDate}
             isClearable
             />
         );
       };
-
-    //   const EndSche = () => {
-    //     const [startDate, setStartDate] = useState(new Date());
-    //     const [endDate, setEndDate] = useState(new Date());
-    //     return (
-    //       <DatePicker
-    //         selected={endDate}
-    //         onChange={date => setEndDate(date)} 
-    //         selectsStart
-    //         startDate={startDate}
-    //         endDate={endDate}
-    //         // minDate={startDate}
-    //         isClearable
-    //         />
-    //     );
-    //   };
 
     return(
         <div>
@@ -83,8 +64,7 @@ const ModalBasic = ({ setModalOpen, onCreate }) => {
                     <input name="title" value={state.title} onChange={handleChangeState}></input>
                 </div>
                 <div className="date">
-                    시작 날짜<StartSche />
-                    {/* <p>종료 날짜<EndSche /></p> */}
+                    날짜<StartSche />
                 </div>
                 <button className="close" onClick={closeModal}>X</button>
                 <button className="addSche" onClick={handleSubmit}>일정 추가</button>

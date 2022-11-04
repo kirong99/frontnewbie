@@ -28,7 +28,7 @@ function Todo(){
             {color && <SelectColors />}
           </div>
 
-          <Post  />
+          <Post />
           <div className="post_color_revise">
               <button onClick={() => {setPostcolor(!postcolor)}}>포스트잇 색상 수정</button>
               {/* <button className="reset_button">초기화</button> */}
