@@ -8,8 +8,6 @@ import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import './main.css';
 
-
-
 function App() {
   return(
     <Routes>

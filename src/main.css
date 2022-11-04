@@ -10,15 +10,15 @@
 .content .right .sticker{width: 212px; height: 53px; background-color: rgba(255, 159, 159, .85); margin-top: -26px;text-align: center;line-height: 53px;font-size: 20px;font-weight: 700;}
 .content .right .right_box{height: calc(100% - 27px); align-items: center; display: flex; flex-direction: column; justify-content: center;}
 .content .right .sche{font-size: 22px; justify-content: center; height: 100%; align-items: center;}
-.content .color_revise{position: absolute; top: 790px;left: 455px;}
+.content .color_revise{position: absolute; top: 790px;left: 500px;}
 .content .color_revise>button{border: none; background-color: white;}
-.content .color_revise button.color_save, .content .post_color_revise button.color_save{width: 50px; height: 37px; border: 1px solid #c6c6c6; border-radius: 13px; position: absolute; left: -69px; top: 10px; background: none;}
+.content .color_revise button.color_save, .content .post_color_revise button.color_save{width: 50px; height: 37px; border: 1px solid #c6c6c6; border-radius: 13px; position: absolute; left: 85px; top: 50px; background: none;}
 .content .color_revise button.color_save:hover, .content .post_color_revise button.color_save:hover{box-shadow: none; border: 1px solid #ffaeae;}
 .content .color_revise>button:hover{box-shadow: 0 4px 0px -2px #ffaeae;}
-button.reset_button{margin-left: 10px;}
-.content .post_color_revise{position: absolute; top: 730px; right: 290px; width: 280px;}
+.content .post_color_revise{position: absolute; top: 730px; right: 405px;}
 .content .post_color_revise>button{border: none; background-color: white;}
 .content .post_color_revise>button:hover{box-shadow: 0 4px 0px -2px #ffaeae;}
+.content .post_color_revise>div, .content .color_revise>div{position: absolute; left: -54px;}
 .content .btn.active{background-color: #fff;}
 
 .option_layout{width: 115px; border: 1px solid black; border-radius: 8px; margin-left: 25px;}
