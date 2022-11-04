@@ -14,11 +14,13 @@ import LocalStorage from "./LocalStorage";
 
 
 const Calendar = () => {
+  const event = JSON.parse(localStorage.getItem("event"))
   const [modalOpen, setModalOpen] = useState(false);
   const showModal = () => {
     setModalOpen(true);
   };
-  const [data,setDate] = useState([]);
+
+  const [data,setDate] = useState(event);
   const dataId = useRef(0);
     const onCreate = (title,date) => {
       const newItem = {
@@ -35,8 +37,6 @@ const Calendar = () => {
     window.localStorage.setItem("event",JSON.stringify(data))
   }, [data])
 
-  const event = JSON.parse(localStorage.getItem("event"))
-
   return(
     <div className="App" id="calendar">
       <FullCalendar
@@ -47,7 +47,7 @@ const Calendar = () => {
           center: 'title',
           right: 'prevYear,dayGridMonth,timeGridWeek,timeGridDay,nextYear'
         }}
-        events={event}
+        events={data && event}
         titleFormat={function(date){
           const day = document.querySelector("fc-timeGridDay-button");
           if(day){

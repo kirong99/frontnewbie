@@ -8,6 +8,7 @@ const ModalBasic = ({ setModalOpen, onCreate }) => {
     const [startDate, setStartDate] = useState(new Date());
     const time = moment(startDate).format('YYYY-MM-DD');
     const today = moment(new Date()).format('YYYY-MM-DD');
+    console.log(time)
 
     // 모달 끄기 
     const closeModal = () => {
@@ -25,6 +26,7 @@ const ModalBasic = ({ setModalOpen, onCreate }) => {
             [e.target.name] : e.target.value,
         })
     }
+    
 
     const handleSubmit = () => {
         onCreate(state.title, state.date);
@@ -33,16 +35,20 @@ const ModalBasic = ({ setModalOpen, onCreate }) => {
             title: "",
             date: today
         });
-
-
     }
     const StartSche = () => {
         // const [endDate, setEndDate] = useState(new Date());
         return (
           <DatePicker
             selected={startDate}
-            onChange={date => setStartDate(date)} 
-            onSelect={handleChangeState}
+            onChange={(date) => {
+                setStartDate(date)
+                const dates = moment(date).format('YYYY-MM-DD')
+                setState({
+                    ...state,
+                    date : dates
+                })
+            }} 
             selectsStart
             startDate={startDate}
             // endDate={endDate}
