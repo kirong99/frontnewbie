@@ -2,10 +2,31 @@ import React, { useContext,useState,useRef } from 'react'
 import ColorContext, {ColorConsumer} from './Color';
 import option_ico from '../image/option.png';
 import Option from './Option';
+import NoteEditor from './NoteEditor';
+import NoteList from './NoteList';
 
 const Note = () => {
     const {state} = useContext(ColorContext);
     const [option_dropdown, setOption] = useState(false);
+
+    const [data, setData] = useState([]);
+    const dataId = useRef(0);
+    const onCreate = (todo) => {
+      const newItem = {todo,id : dataId.current,};
+      dataId.current += 1;
+      setData([newItem, ...data]);
+    };
+    const onRemove = (targetId) => {
+      console.log(`${targetId}가 삭제되었습니다.`);
+      const newNoteList = data.filter((it) => it.id !== targetId);
+      setData(newNoteList);
+    }
+    const onEdit = (targetId, newTodo) => {
+      setData(
+        data.map((it) => 
+        it.id === targetId ? { ...it, todo:newTodo } : it)
+      );
+    };
 
     return(
           <div className='left' style={{background: state.color}}>
@@ -18,8 +39,8 @@ const Note = () => {
               <div><div className='line'></div><div className='circle'></div></div>
             </div>
             <div className='addTodo'>
-              <input type="text" name="title"></input>
-              <input type="submit"></input>
+              <NoteEditor onCreate={onCreate}/>
+              <NoteList onEdit={onEdit} onRemove={onRemove} notelist={data}/>
             </div>
           </div>
     )
