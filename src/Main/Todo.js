@@ -13,8 +13,6 @@ function Todo(){
     // 왼쪽 색상 변경
     const [color,setColor] = useState(false);
 
-    const formatDate = Moment().format('YYYY-MM-DD');
-
     // 오른쪽 색상 변경
     const [postcolor,setPostcolor] = useState(false);
     
@@ -24,14 +22,12 @@ function Todo(){
           <Note />
           <div className="color_revise">
             <button onClick={() => {setColor(!color)}}>노트 색상 수정</button>
-            {/* <button className="reset_button">초기화</button> */}
             {color && <SelectColors />}
           </div>
 
           <Post />
           <div className="post_color_revise">
               <button onClick={() => {setPostcolor(!postcolor)}}>포스트잇 색상 수정</button>
-              {/* <button className="reset_button">초기화</button> */}
               {postcolor && <SelectPostColors />}
           </div>
         </ColorProvider>

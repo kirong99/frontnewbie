@@ -1,11 +1,12 @@
-import React, { useContext,useState,useRef } from 'react'
+import React, { useContext,useState,useRef, useEffect } from 'react'
 import ColorContext, {ColorConsumer} from './Color';
-import option_ico from '../image/option.png';
-import Option from './Option';
 
 const Note = () => {
     const {state} = useContext(ColorContext);
-    const [option_dropdown, setOption] = useState(false);
+
+    useEffect(()=>{
+      window.localStorage.setItem("noteColor",state.color)
+    },[state.color])
 
     return(
           <div className='left' style={{background: state.color}}>
