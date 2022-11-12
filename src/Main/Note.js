@@ -1,40 +1,45 @@
-import React, { useContext,useState,useRef } from 'react'
+import React, { useContext,useState,useRef, useEffect } from 'react'
 import ColorContext, {ColorConsumer} from './Color';
-import option_ico from '../image/option.png';
-import Option from './Option';
+import NoteEditor from './NoteEditor';
+import NoteList from './NoteList';
 
 const Note = () => {
     const {state} = useContext(ColorContext);
-    const [option_dropdown, setOption] = useState(false);
-    const [todoState,setTodoState] = useState({title:""})
+    const todoList = JSON.parse(localStorage.getItem("todo")) 
+    //JSON 형식으로 todo라는 데이터베이스를 불러오겠다. parse --> 객체 형식으로
 
-    const [todoData,setTodoDate] = useState();
+    useEffect(()=>{
+      window.localStorage.setItem("noteColor",state.color)
+    },[state.color])
+
+    const [data, setData] = useState(todoList);
     const dataId = useRef(0);
-
-    const onCreate = (title) => {
-      const newItem = {
-        title,
-        id: dataId.current
-      }
+    const onCreate = (todo) => {
+      const newItem = {todo,id : dataId.current,};
       dataId.current += 1;
-      setTodoDate([newItem , ...todoData])
-      console.log(todoData)
+      setData([newItem, ...data]);
+    };
+
+    const onRemove = (targetId) => {
+      console.log(`${targetId}가 삭제되었습니다.`);
+      const newNoteList = data.filter((it) => it.id !== targetId);
+      setData(newNoteList);
     }
 
-    const handleChangeState = (e) => {
-      setTodoDate({
-          ...todoState,
-          [e.target.name] : e.target.value,
-      })
-  }
+    const onEdit = (targetId, newTodo) => {
+      setData(
+        data.map((it) => 
+        it.id === targetId ? { ...it, todo:newTodo } : it)
+      );
+    };
 
-  const handleSubmit = () => {
-      onCreate(todoState.title);
-      alert('저장 성공');
-      setTodoDate({
-          title: "",
-      });
-  }
+    useEffect(()=>{ //웹에서 useEffect안에 있는 명령이 계속 실행 될 수 있게 해주는 것
+      window.localStorage.setItem("todo",JSON.stringify(data)) //웹페이지.데이터베이스.저장("이름",저장할 내용)
+    },[data]) //어떤 방식으로?
+
+    
+
+    console.log(data);
 
     return(
           <div className='left' style={{background: state.color}}>
@@ -47,8 +52,8 @@ const Note = () => {
               <div><div className='line'></div><div className='circle'></div></div>
             </div>
             <div className='addTodo'>
-              <input type="text" name="title" value={todoState.title} onChange={handleChangeState}></input>
-              <input type="submit" onClick={handleSubmit}></input>
+              <NoteEditor onCreate={onCreate}/>
+              <NoteList onEdit={onEdit} onRemove={onRemove} notelist={data}/>
             </div>
           </div>
     )

@@ -15,6 +15,16 @@ const Post = () => {
     
     
     const formatDate = Moment().format('YYYY-MM-DD');
+
+    
+    useEffect(()=>{
+      window.localStorage.setItem("postColor",JSON.stringify(state.postcolor))
+    },[state.postcolor])
+
+    useEffect(()=>{
+      window.localStorage.setItem("stickerColor",JSON.stringify(state.stickercolor))
+    },[state.stickercolor])
+
     return (
         <div className='right' style={{background: postcolor}}>
             <div className='sticker' style={{background : state.stickercolor}}>{formatDate}</div>
