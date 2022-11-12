@@ -16,7 +16,7 @@ const ColorProvider = ({children}) => {
     
     const [color, setColor] = useState(noteColorData);
     const [postcolor, setPostcolor] = useState(postColorData);
-    const [stickercolor, setStickercolor] = useState(stickerColorData)
+    const [stickercolor, setStickercolor] = useState(stickerColorData);
     const value = {
         state : { color, postcolor, stickercolor },
         actions : { setColor, setPostcolor, setStickercolor },
