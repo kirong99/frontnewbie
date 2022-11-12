@@ -1,5 +1,7 @@
 import React, { createContext, useCallback, useState } from 'react';
 
+
+
 const ColorContext = createContext({
     state : { color : 'inherit', postcolor : 'yellow', stickercolor: 'red'},
     actions : {
@@ -11,8 +13,10 @@ const ColorContext = createContext({
 
 const ColorProvider = ({children}) => {
     
+    const postcolors = JSON.parse(localStorage.getItem("postColor"))
+    
     const [color, setColor] = useState('white');
-    const [postcolor, setPostcolor] = useState('#fefeb2');
+    const [postcolor, setPostcolor] = useState(postcolors);
     const [stickercolor, setStickercolor] = useState('#ffafaf')
     const value = {
         state : { color, postcolor, stickercolor },
