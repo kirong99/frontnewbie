@@ -46,9 +46,9 @@ const Calendar = () => {
     window.localStorage.setItem("dark",themeMode)
   },[themeMode])
 
-  if(themeMode === 'dark'){
-    document.getElementsByClassName("fc-col-header-cell-cushion")[0].style.color = '#fff';
-  }
+  // if(themeMode === 'dark'){
+  //   document.getElementsByClassName("fc-col-header-cell-cushion")[0].style.color = '#fff';
+  // }
 
   return(
     <ThemeProvider theme={theme}>
