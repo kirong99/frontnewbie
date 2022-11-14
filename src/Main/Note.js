@@ -5,12 +5,14 @@ import NoteList from './NoteList';
 
 const Note = () => {
     const {state} = useContext(ColorContext);
-    const todoList = JSON.parse(localStorage.getItem("todo")) 
-    //JSON 형식으로 todo라는 데이터베이스를 불러오겠다. parse --> 객체 형식으로
 
     useEffect(()=>{
       window.localStorage.setItem("noteColor",state.color)
     },[state.color])
+
+    const todoList = JSON.parse(localStorage.getItem("todo"));
+
+    console.log(todoList)
 
     const [data, setData] = useState(todoList);
     const dataId = useRef(0);
@@ -37,8 +39,6 @@ const Note = () => {
       window.localStorage.setItem("todo",JSON.stringify(data)) //웹페이지.데이터베이스.저장("이름",저장할 내용)
     },[data]) //어떤 방식으로?
 
-    
-
     console.log(data);
 
     return(
@@ -53,7 +53,7 @@ const Note = () => {
             </div>
             <div className='addTodo'>
               <NoteEditor onCreate={onCreate}/>
-              <NoteList onEdit={onEdit} onRemove={onRemove} notelist={data}/>
+              <NoteList onEdit={onEdit} onRemove={onRemove} notelist={data} />
             </div>
           </div>
     )
