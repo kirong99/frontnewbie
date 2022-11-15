@@ -5,9 +5,9 @@ const NoteList = ({onEdit, onRemove, notelist}) => {
         <div className="NoteList">
             <h4>{notelist.length}개의 할 일이 있습니다.</h4>
             <div>
-                {notelist.map((it) => (
+                { notelist.map((it) => (
                     <NoteItem key={it.id} {...it} onEdit={onEdit} onRemove={onRemove}/>
-                ))}
+                )) }
             </div>
         </div>
     );

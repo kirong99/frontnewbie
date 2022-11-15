@@ -10,8 +10,12 @@ const NoteEditor = ({onCreate}) => {
         });
     };
     const handleSubmit = () => {
+        if (state.todo.length < 2){
+            todoinput.current.focus();
+            return;
+        }
         onCreate(state.todo);
-        alert("저장성공");
+        // alert("저장성공");
         setState({todo:""});
     };
 

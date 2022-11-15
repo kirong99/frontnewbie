@@ -12,9 +12,9 @@ const Note = () => {
 
     const todoList = JSON.parse(localStorage.getItem("todo"));
 
-    console.log(todoList)
+    console.log(todoList);
 
-    const [data, setData] = useState(todoList);
+    const [data, setData] = useState([]);
     const dataId = useRef(0);
     const onCreate = (todo) => {
       const newItem = {todo,id : dataId.current,};
@@ -39,7 +39,6 @@ const Note = () => {
       window.localStorage.setItem("todo",JSON.stringify(data)) //웹페이지.데이터베이스.저장("이름",저장할 내용)
     },[data]) //어떤 방식으로?
 
-    console.log(data);
 
     return(
           <div className='left' style={{background: state.color}}>
