@@ -4,6 +4,7 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import ModalBasic from "./Modal/ModalBasic";
+import EventModal from "./EventModal";
 import styled, { ThemeProvider } from "styled-components";
 import { light, dark } from '../theme';
 import Button from "../Button";
@@ -16,10 +17,13 @@ const Calendar = () => {
   const event = JSON.parse(localStorage.getItem("event"))
   const themeData = window.localStorage.getItem("dark")
   const [modalOpen, setModalOpen] = useState(false);
+  const [eventOpen, setEventOpen] = useState(false);
   const showModal = () => {
     setModalOpen(true);
   };
-
+  const showEvent = () => {
+    setEventOpen(true);
+  }
   const [data,setDate] = useState(event);
   const dataId = useRef(0);
   const onCreate = (title,date) => {
@@ -45,6 +49,8 @@ const Calendar = () => {
   useEffect(()=>{
     window.localStorage.setItem("dark",themeMode)
   },[themeMode])
+
+  // const url = "http://google.com/"
 
   // if(themeMode === 'dark'){
   //   document.getElementsByClassName("fc-col-header-cell-cushion")[0].style.color = '#fff';
@@ -83,15 +89,15 @@ const Calendar = () => {
             dateClick={function(e){
               console.log(e.dateStr)
             }}
-            eventClick={function(arg){
-              alert(arg.event.title)
-              /* 모달 띄우기 */
-            }}
+            eventClick={showEvent}
             timeZone="Asia/Seoul"
           />
           <div className='modal'>
               <button className='modal_add' onClick={showModal} >일정 추가</button>
               {modalOpen && <ModalBasic onCreate={onCreate} setModalOpen={setModalOpen}/>}
+          </div>
+          <div className="modal-event">
+            {eventOpen && <EventModal setEventOpen={setEventOpen}/>}
           </div>
         </div>
         <Button title={theme === 'light' ? '일반모드' : '다크모드'} click={toggleTheme} />
