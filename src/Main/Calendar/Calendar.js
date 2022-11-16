@@ -85,7 +85,6 @@ const Calendar = () => {
             }}
             eventClick={function(arg){
               alert(arg.event.title)
-              alert(arg.event.start)
             }}
             timeZone="Asia/Seoul"
           />
