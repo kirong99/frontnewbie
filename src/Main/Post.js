@@ -26,7 +26,7 @@ const Post = () => {
     },[state.stickercolor])
 
     return (
-        <div className='right' style={{background: postcolor}}>
+        <div className='right' style={{background: state.postcolor}}>
             <div className='sticker' style={{background : state.stickercolor}}>{formatDate}</div>
             <div className="right_box">
                 {event && event.map((it, idx)=>(
