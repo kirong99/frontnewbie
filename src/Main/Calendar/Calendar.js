@@ -53,7 +53,7 @@ const Calendar = () => {
   return(
     <ThemeProvider theme={theme}>
         <S.Main>
-        <div className="App" id="calendar" style={{color: themeMode === 'dark' ? "#fff" : "000"}}>
+        <div className="App" id="calendar" style={{color: theme === 'dark' ? "#fff" : "000"}}>
           <FullCalendar
             initialView="dayGridMonth"
             plugins={[ dayGridPlugin,timeGridPlugin,interactionPlugin ]}
@@ -85,7 +85,7 @@ const Calendar = () => {
             }}
             eventClick={function(arg){
               alert(arg.event.title)
-              /* 모달 띄우기 */
+              /* 모달 띄우기 일정을 클릭하면 모달이 나오면서 모달 안에 제목과 아래 수정, 삭제 */
             }}
             timeZone="Asia/Seoul"
           />
