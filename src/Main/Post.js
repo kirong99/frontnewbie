@@ -25,13 +25,14 @@ const Post = () => {
       window.localStorage.setItem("stickerColor",JSON.stringify(state.stickercolor))
     },[state.stickercolor])
 
+    // formatDate === it.date
     return (
         <div className='right' style={{background: state.postcolor}}>
             <div className='sticker' style={{background : state.stickercolor}}>{formatDate}</div>
             <div className="right_box">
                 {event && event.map((it, idx)=>(
                   <div key={idx}>
-                    <div className="sche" style={{display: formatDate === it.date ? "flex" : "none"}}>{it.title}</div>
+                    {formatDate === it.date ? <div className="sche" style={{display: "flex", margin: "0 auto 10px"}} >{it.title}</div> : <div className="none" style={{display: "none"}} >{it.title}</div>}
                   </div>
                 ))}
           </div>

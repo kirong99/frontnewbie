@@ -17,11 +17,11 @@ const Header = () => {
                         <li className='on'><Link to="/Todo" className='link'>Home</Link></li>
                         <li><Link to="/Calendar" className='link'>Calender</Link></li>
                     </ul>
-                    <div className='login_ico'>
+                    {/* <div className='login_ico'>
                         <Link to="/login">
                             <img src={login} alt='login'/>
                         </Link>
-                    </div>
+                    </div> */}
                 </div>
             </div>
             <main><Outlet /></main>

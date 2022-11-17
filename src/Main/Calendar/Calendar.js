@@ -59,7 +59,7 @@ const Calendar = () => {
   return(
     <ThemeProvider theme={theme}>
         <S.Main>
-        <div className="App" id="calendar" style={{color: themeMode === 'dark' ? "#fff" : "000"}}>
+        <div className="App" id="calendar" style={{color: theme === 'dark' ? "#fff" : "000"}}>
           <FullCalendar
             initialView="dayGridMonth"
             plugins={[ dayGridPlugin,timeGridPlugin,interactionPlugin ]}
