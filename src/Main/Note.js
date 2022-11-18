@@ -17,7 +17,7 @@ const Note = () => {
     const [data, setData] = useState(todoList);
     const dataId = useRef(0);
     const onCreate = (todo) => {
-      const newItem = {todo,id : dataId.current,};
+      const newItem = {todo,id : dataId.current};
       dataId.current += 1;
       setData([newItem, ...data]);
     };
