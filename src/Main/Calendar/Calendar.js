@@ -18,12 +18,14 @@ const Calendar = () => {
   const loadEvent = JSON.parse(localStorage.getItem("saveEvent"))
   const themeData = window.localStorage.getItem("dark")
   const [modalOpen, setModalOpen] = useState(false);
-  const [eventOpen, setEventOpen] = useState(false);
+  const [visible, setVisible] = useState(false);
+
   const showModal = () => {
     setModalOpen(true);
   };
-  const showEvent = () => {
-    setEventOpen(true);
+
+  const showButton = () => {
+    setVisible(true)
   }
   const [data,setDate] = useState(event);
   const dataId = useRef(0);
@@ -38,6 +40,18 @@ const Calendar = () => {
     console.log(data)
   }
 
+  const onRemove = (targetId) => {
+    console.log(`${targetId}가 삭제되었습니다`);
+    const newDiaryList = data.filter((it) => it.id !== targetId);
+    setDate(newDiaryList)
+  }
+
+  const onEdit = (targetId, newContent) => {
+    setDate(
+      data.map((it)=>it.id === targetId ? {...it, title:newContent} : it)
+    )
+  }
+
   useEffect(()=>{
     window.localStorage.setItem("event",JSON.stringify(data))
   }, [data])
@@ -50,12 +64,6 @@ const Calendar = () => {
   useEffect(()=>{
     window.localStorage.setItem("dark",themeMode)
   },[themeMode])
-
-  // const url = "http://google.com/"
-
-  // if(themeMode === 'dark'){
-  //   document.getElementsByClassName("fc-col-header-cell-cushion")[0].style.color = '#fff';
-  // }
 
   return(
     <ThemeProvider theme={theme}>
@@ -90,17 +98,22 @@ const Calendar = () => {
             dateClick={function(e){
               console.log(e.dateStr)
             }}
-            eventClick={showEvent}
+            // eventClick={showButton}
             timeZone="Asia/Seoul"
           />
+
           <div className='modal'>
               <button className='modal_add' onClick={showModal} >일정 추가</button>
-              {modalOpen && <ModalBasic onCreate={onCreate} setModalOpen={setModalOpen}/>}
+              {modalOpen && <ModalBasic onCreate={onCreate} setModalOpen={setModalOpen} eventList = {data} />}
           </div>
-          <div className="modal-event">
-            {eventOpen && <EventModal setEventOpen={setEventOpen}/>}
+
+          <div className="event">
+            <button onClick={showButton}>일정 목록</button>
+            {visible && <EventModal onRemove={onRemove} onEdit={onEdit} setModalOpen={setModalOpen} eventList = {data} />}
           </div>
+          
         </div>
+
         <Button title={theme === 'light' ? '일반모드' : '다크모드'} click={toggleTheme} />
       </S.Main>
     </ThemeProvider>
