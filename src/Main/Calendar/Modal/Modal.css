@@ -125,3 +125,33 @@
 .react-datepicker__input-container .react-datepicker__close-icon{
     right: 140px;
 }
+
+.event{
+    text-align: center;
+    padding: 4em;
+}
+
+.EventItemBox{
+    margin: 25px 0;
+}
+
+.EventList h2{
+    margin-top: 25px;
+}
+
+.content{
+    margin: 10px 0;
+    flex: 1;
+}
+
+.btn{
+    margin-top: 10px;
+    flex: 1;
+}
+
+.eventList-modal{
+    display: flex;
+    width: 550px;
+    align-items: center;
+    margin-bottom: 20px;
+}

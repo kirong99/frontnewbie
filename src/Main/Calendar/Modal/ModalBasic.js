@@ -5,7 +5,8 @@ import moment from 'moment';
 import "react-datepicker/dist/react-datepicker.css";
 import ko from "date-fns/locale/ko"
 
-const ModalBasic = ({ setModalOpen, onCreate }) => {
+const ModalBasic = ({ setModalOpen, onCreate, eventList }) => {
+    console.log(eventList)
     const [startDate, setStartDate] = useState(new Date());
     const time = moment(startDate).format('YYYY-MM-DD');
     const today = moment(new Date()).format('YYYY-MM-DD');
