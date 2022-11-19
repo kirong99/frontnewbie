@@ -27,6 +27,7 @@ const Calendar = () => {
   const showButton = () => {
     setVisible(true)
   }
+
   const [data,setDate] = useState(event);
   const dataId = useRef(0);
   const onCreate = (title,date) => {
@@ -101,18 +102,16 @@ const Calendar = () => {
             // eventClick={showButton}
             timeZone="Asia/Seoul"
           />
+            <div className='modal'>
+                <button className='modal_add' onClick={showModal} >일정 추가</button>
+                {modalOpen && <ModalBasic onCreate={onCreate} setModalOpen={setModalOpen} eventList = {data} />}
+            </div>
 
-          <div className='modal'>
-              <button className='modal_add' onClick={showModal} >일정 추가</button>
-              {modalOpen && <ModalBasic onCreate={onCreate} setModalOpen={setModalOpen} eventList = {data} />}
-          </div>
-
-          <div className="event">
-            <button onClick={showButton}>일정 목록</button>
-            {visible && <EventModal onRemove={onRemove} onEdit={onEdit} setModalOpen={setModalOpen} eventList = {data} />}
-          </div>
-          
-        </div>
+            <div className="event">
+              <button onClick={showButton}>일정 목록</button>
+              {visible && <EventModal onRemove={onRemove} onEdit={onEdit} setModalOpen={setModalOpen} eventList = {data} />}
+            </div>
+          </div> 
 
         <Button title={theme === 'light' ? '일반모드' : '다크모드'} click={toggleTheme} />
       </S.Main>

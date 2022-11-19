@@ -155,3 +155,12 @@
     align-items: center;
     margin-bottom: 20px;
 }
+
+.event>button{background-color: #fff; border: 1px solid #999; width: 150px; height: 30px; border-radius: 8px; cursor: pointer;}
+.event>button:hover{background-color: #ffaeae; border-color: #ffaeae;}
+.event .noModify{display: flex;}
+.event .modify textarea{width: 240px; border: 1px solid #a8a8a8; font-size: 17px;}
+.event .btn{display: flex;}
+.event .btn button, .event .modifyConfirm button{background-color: #fff; border: 1px solid #999; width: 100px; height: 30px; border-radius: 8px; cursor: pointer;}
+.event .btn button:hover, .event .modifyConfirm button:hover{background-color: #ffaeae; border-color: #ffaeae;}
+.event .btn button:first-child , .event .modifyConfirm button:first-child{margin-right: 10px;}
