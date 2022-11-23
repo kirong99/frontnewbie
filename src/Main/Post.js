@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import ColorContext from './Color';
 import Moment from 'moment'
+import '../font.css';
 
 const Post = () => {
     const {state} = useContext(ColorContext);
