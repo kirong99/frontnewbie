@@ -28,7 +28,7 @@ const Calendar = () => {
     setVisible(true)
   }
 
-  const [data,setDate] = useState(event);
+  const [data,setDate] = useState(event != null ? event : []);
   const dataId = useRef(0);
   const onCreate = (title,date) => {
     const newItem = {
@@ -124,9 +124,6 @@ const Calendar = () => {
 export default Calendar;
 
 const S ={};
-
-
-  
 
 
 S.Main = styled.div`
