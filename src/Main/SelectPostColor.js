@@ -32,7 +32,8 @@ const SelectPostColors = () => {
                     </div>
                 )}
             </ColorConsumer>
-            <button class="color_save">저장</button>
+            <p className='color-alert' style={{fontSize:"10px", textAlign:"center", marginTop:"10px"}}>색상에 마우스 오른쪽 버튼을 클릭해보세요!</p>
+            {/* <button class="color_save">저장</button> */}
         </div>
     )
 }

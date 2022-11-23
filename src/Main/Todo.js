@@ -49,9 +49,10 @@ function Todo(){
       let fileReader = new FileReader();
       fileReader.onload = () => {
         console.log(fileReader.result);
-        localStorage.setItem("saveEvent",fileReader.result)  
+        localStorage.setItem("event",fileReader.result)  
       };
       fileReader.readAsText(file);
+      window.location.replace("/")
     }
     
     return(

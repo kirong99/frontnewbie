@@ -28,7 +28,7 @@ const SelectColors = () => {
                     </div>
                 )}
             </ColorConsumer>
-            <button class="color_save">저장</button>
+            {/* <button class="color_save">저장</button> */}
         </div>
     )
 }
