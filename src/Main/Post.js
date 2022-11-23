@@ -8,8 +8,6 @@ const Post = () => {
 
     const event = JSON.parse(localStorage.getItem("event"))
 
-    const loadEvent = JSON.parse(localStorage.getItem("saveEvent"))
-
     
     useEffect(()=>{
       window.localStorage.setItem("postColor",JSON.stringify(state.postcolor))
@@ -32,15 +30,16 @@ const Post = () => {
         <div className='right' style={{background: state.postcolor}}>
             <div className='sticker' style={{background : state.stickercolor}}>{formatDate}</div>
             <div className="right_box">
-                {loadEvent ? loadEvent.map((it, idx)=>(
+                {/* {loadEvent ? loadEvent.map((it, idx)=>(
                   <div key={idx}>
                     {formatDate === it.date ? <div className="sche" style={{display: "flex", margin: "0 auto 10px"}} >{it.title}</div> : <div className="none" style={{display: "none"}} >{it.title}</div>}
                   </div>
-                )) : event.map((it,idx)=>(
+                )) : */}
+                {event.map((it,idx)=>( 
                   <div key={idx}>
                     {formatDate === it.date ? <div className="sche" style={{display: "flex", margin: "0 auto 10px"}} >{it.title}</div> : <div className="none" style={{display: "none"}} >{it.title}</div>}
                   </div>
-                )) }
+                ))}
           </div>
         </div>
     )
