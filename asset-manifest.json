@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/frontnewbie/static/css/main.b7ae1ad6.css",
+    "main.js": "/frontnewbie/static/js/main.eb02285c.js",
+    "index.html": "/frontnewbie/index.html",
+    "main.b7ae1ad6.css.map": "/frontnewbie/static/css/main.b7ae1ad6.css.map",
+    "main.eb02285c.js.map": "/frontnewbie/static/js/main.eb02285c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b7ae1ad6.css",
+    "static/js/main.eb02285c.js"
+  ]
+}
