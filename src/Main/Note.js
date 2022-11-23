@@ -2,6 +2,7 @@ import React, { useContext,useState,useRef, useEffect } from 'react'
 import ColorContext, {ColorConsumer} from './Color';
 import NoteEditor from './NoteEditor';
 import NoteList from './NoteList';
+import '../font.css';
 
 const Note = () => {
     const {state} = useContext(ColorContext);
