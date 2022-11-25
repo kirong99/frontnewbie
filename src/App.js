@@ -1,7 +1,7 @@
 import Header from './Main/header.js';
 import Todo from './Main/Todo.js';
 import Calendar from './Main/Calendar/Calendar';
-import { Routes, Route } from 'react-router-dom';
+import { HashRouter as Routes, Route } from 'react-router-dom';
 import './App.css';
 import './main.css';
 
