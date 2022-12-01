@@ -10,7 +10,7 @@ const SelectPostColors = () => {
             <ColorConsumer>
                 {({actions})=>(
                     <div style={{display:'flex'}}>
-                        {colors.map(postcolor=>(
+                        {colors && colors.map(postcolor=>(
                             <div
                                 key = {postcolor}
                                 style = {{

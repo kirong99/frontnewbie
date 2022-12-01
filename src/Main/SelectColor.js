@@ -11,7 +11,7 @@ const SelectColors = () => {
             <ColorConsumer>
                 {({actions})=>(
                     <div style={{display:'flex'}}>
-                        {colors.map(color=>(
+                        {colors && colors.map(color=>(
                             <div
                                 key = {color}
                                 style = {{

@@ -49,7 +49,7 @@ const Calendar = () => {
 
   const onEdit = (targetId, newContent) => {
     setDate(
-      data.map((it)=>it.id === targetId ? {...it, title:newContent} : it)
+      data && data.map((it)=>it.id === targetId ? {...it, title:newContent} : it)
     )
   }
 

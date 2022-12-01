@@ -31,7 +31,7 @@ const Note = () => {
 
     const onEdit = (targetId, newTodo) => {
       setData(
-        data.map((it) => 
+        data && data.map((it) => 
         it.id === targetId ? { ...it, todo:newTodo } : it)
       );
     };

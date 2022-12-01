@@ -6,7 +6,7 @@ const NoteList = ({onEdit, onRemove, notelist}) => {
         <div className="NoteList">
             <h4 className="font">{notelist.length}개의 할 일이 있습니다.</h4>
             <div>
-                { notelist.map((it) => (
+                { notelist && notelist.map((it) => (
                     <NoteItem key={it.id} {...it} onEdit={onEdit} onRemove={onRemove}/>
                 )) }
             </div>

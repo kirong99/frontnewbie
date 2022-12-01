@@ -2,13 +2,16 @@ import { useState,useRef } from "react";
 const EventItem = ({title,date,id,onRemove,onEdit}) => {
 
     const [isEdit, setIsEdit] = useState(false);
-    const toggleIsEdit = () => setIsEdit(!isEdit)
+    const toggleIsEdit = () => {
+        setIsEdit(!isEdit);
+        // window.location.replace("/")
+    }
 
     const [localContent,setLocalContent] = useState(title)
     const localCotentInput = useRef();
 
     const handleRemove = () => {
-        if(window.confirm(`${id}번째 일기를 삭제하시겠습니까?`)){
+        if(window.confirm(`${id}번째 일정을 삭제하시겠습니까?`)){
             onRemove(id)
         }
     }
@@ -24,7 +27,7 @@ const EventItem = ({title,date,id,onRemove,onEdit}) => {
             return;
         }
 
-    if(window.confirm(`${id}번 째 일기를 수정하시겠습니까?`)){
+    if(window.confirm(`${id}번 째 일정을 수정하시겠습니까?`)){
         onEdit(id,localContent);
         toggleIsEdit();
     }
