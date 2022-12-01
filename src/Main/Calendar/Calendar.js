@@ -15,7 +15,6 @@ import './style.css'
 
 const Calendar = () => {
   const event = JSON.parse(localStorage.getItem("event"))
-  const loadEvent = JSON.parse(localStorage.getItem("saveEvent"))
   const themeData = window.localStorage.getItem("dark")
   const [modalOpen, setModalOpen] = useState(false);
   const [visible, setVisible] = useState(false);

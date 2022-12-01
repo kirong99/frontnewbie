@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect, useCallback} from "react";
-import ColorContext, {ColorConsumer} from './Color';
+import ColorContext from './Color';
 import Note from "./Note";
 import SelectColors from "./SelectColor";
 import { ColorProvider } from './Color';
@@ -13,7 +13,6 @@ import "./todo.css"
 
 function Todo(){
     const themeData = window.localStorage.getItem("dark")
-    const {state} = useContext(ColorContext);
     // 왼쪽 색상 변경
     const [color,setColor] = useState(false);
 
@@ -42,7 +41,7 @@ function Todo(){
       element.download = fileName;
       document.body.appendChild(element);
       element.click();
-    },[])
+    })
 
     const onFileChange = (e) => {
       let file = e.target.files[0];

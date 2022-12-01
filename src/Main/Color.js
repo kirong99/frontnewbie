@@ -1,4 +1,4 @@
-import React, { createContext, useCallback, useState } from 'react';
+import React, { createContext, useState } from 'react';
 
 const postColorData = JSON.parse(localStorage.getItem("postColor"))
 const noteColorData = localStorage.getItem("noteColor")
