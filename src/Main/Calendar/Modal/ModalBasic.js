@@ -1,4 +1,4 @@
-import React, { useState,useRef } from 'react';
+import React, { useState } from 'react';
 import DatePicker, { registerLocale } from 'react-datepicker';
 import "./Modal.css";
 import moment from 'moment';

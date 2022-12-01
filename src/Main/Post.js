@@ -1,11 +1,10 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect } from 'react';
 import ColorContext from './Color';
 import Moment from 'moment'
 import '../font.css';
 
 const Post = () => {
     const {state} = useContext(ColorContext);
-    const postcolor = JSON.parse(localStorage.getItem("postColor"))
 
     const event = JSON.parse(localStorage.getItem("event"))
 

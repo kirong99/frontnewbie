@@ -2,7 +2,6 @@ import React from 'react';
 import '../header.css';
 import '../App.css';
 import logo from '../image/today_logo.png';
-import login from '../image/login.png';
 import { Link,Outlet } from 'react-router-dom';
 
 const Header = () => {
